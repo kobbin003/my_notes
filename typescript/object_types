@@ -1,0 +1,16 @@
+
+💬️⭐️ --------------- DYNAMIC READING AND WRITING IN OBJECTS IN TYPESCRIPT ------------------------------
+
+when trying to access a property of an object using a dynamic string key because TypeScript cannot 
+ensure that the property actually exists on the object. This can lead to runtime errors if the property 
+is not present, so TypeScript requires you to explicitly declare the type of the property when you use a 
+dynamic string key to access it.
+However, when you are creating a new object, TypeScript can infer the type of the dynamic string key based 
+on the type of the value you are assigning to it. 
+
+tdlr: While reading i.e Object[key], the key type of the objectType should be mentioned;
+	  So use " index signature "
+	  While writing i.e {[key]:"value"}, the keytype is not important because Typescript infers the keytype 
+	  based on your input i.e if{["key"]:"value"}, then Typescript will infer the keytype as a 'string'
+	  
+	  Refer : React_Typescript -> [key: string]

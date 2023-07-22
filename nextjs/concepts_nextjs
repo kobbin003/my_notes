@@ -1,0 +1,28 @@
+nextjs CONCEPTS:
+
+server component V/S client component : file:///home/kobin/Pictures/pics/serverVSclient.webp
+
+page/api : you can create API in nextjs instead of creating API in backend(e.g expressjs)
+			BUT if you already have an API, fetch it directly from the component.
+			
+cache : fetched datas are caached by default but you can set cache settings.
+		e.g fetch('https://...', { next: { revalidate: 10 } }) 
+		// the cached data(the result from the first fetch) is returned IF same fetch is requested within 10 sec
+		// data is refetched IF same fetch is requested after 10 sec.
+		
+		ALTERNATIVELY:
+		import { cache } from 'react'
+ 
+		export const getUser = cache(async (id: string) => {
+		  const user = await db.user.findUnique({ id })
+		  return user
+		})
+		
+{tags: ["name"]} , revalidateTag("name") :
+
+		fetch('https://...', { next: { tags:["tagname"], revalidate: 10 } }) 
+		// this does the same as above☝️, "PLUS", the data is fetched whenever we call < revalidateTag("tagname") >
+		
+		so suppose we modify the "tagname" in the data.
+		e.g updateTagName() 
+			revalidateTag("tagname")

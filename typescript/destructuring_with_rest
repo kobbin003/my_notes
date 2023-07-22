@@ -1,0 +1,8 @@
+get the last items of an array by detructuring:
+
+SOLUTION:
+const [a, ...rest] = ['a', 'b', 'program'].reverse();
+
+IN TYPESCRIPT(rest type) :
+
+const [a, ...rest] : [a: aType, ...rest: any[] = ['a', 'b', 'program'].reverse()

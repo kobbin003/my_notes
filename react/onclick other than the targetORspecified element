@@ -1,0 +1,27 @@
+					
+					⭐️ ⭐️ ⭐️ ⭐️ ⭐️ HOW TO GET ONCLICK EVENT OTHER THAN A SPECIFIED ELEMENT : ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ 
+
+🟡️ use : document.addEventListener("click", [click handler]);
+
+👉️ React Comp :
+
+const [element, setElement] = useState<HTMLElement>();
+const [outsideElement, setOutsideElement] = useState<HTMLElement>();
+const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+	console.log("clicked", e.currentTarget);
+	setElement(e.currentTarget)
+}
+useEffect(() => {
+		const handleClickedOutside = (e: any) => {
+			console.log("clicked", e.target);
+			setOutsideElement(e.target);
+		};
+		document.addEventListener("click", handleClickedOutside);
+		return () => document.removeEventListener("click", handleClickedOutside);
+	}, []);
+useEffect(() => {
+		console.log("element change", element, outsideElement);
+		if (element !== outsideElement) {
+			// do something
+		}
+	}, [element, outsideElement]);

@@ -1,0 +1,11 @@
+scp:
+To use the scp command to copy a file from a remote host to your local machine, you can use the following syntax:
+
+syntax:
+scp [options] [user}@[host]:[source_file] [destination]
+
+
+[options]: Optional command-line options that modify the behavior of scp.
+[user]@[host]: The username and hostname or IP address of the remote server.
+[source_file]: The path to the file on the remote server that you want to copy.
+[destination]: The path where you want to save the copied file on your local machine.

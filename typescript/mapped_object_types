@@ -1,0 +1,27 @@
+					
+					⭐️ ⭐️ ⭐️ mapped object : ⭐️ ⭐️ ⭐️
+
+👉️ when we try this :
+type X = {
+	[ key: "a" |"b" ] : string;
+	}
+
+We get this ⛔️error:
+" An index signature parameter type cannot be a literal type or generic type. 
+Consider using a mapped object type instead."
+
+what we can do is ✅️this:
+
+type Y = "a" | "b";
+
+type X = {
+	[ key in Y ]:string
+	}
+
+👉️ Definition:
+Mapped object types are a feature in TypeScript that allow you to transform or modify the properties of an 
+object type using a mapping operation. It allows you to create new types by iterating over the keys of an 
+existing type and transforming or adding properties based on those keys.
+
+In the above example, we are creating a mapped object type i.e [ key in Y ] which was created by iterating over
+the keys of Y.

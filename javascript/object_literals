@@ -1,0 +1,16 @@
+
+💬️⭐️ ------ object[key] and [key] are used in different contexts ------
+
+👉️ object[key] is used to access a property of an object by its key, where key is a string or a 
+variable that holds a string value. For example, if you have an object `person` with properties 
+name, age, and gender, you can access the value of name using person['name'] or person.name.
+
+👉️ [key] is used to create a dynamic object property, where key is a variable that holds a string value. 
+This syntax is commonly used when you want to set a property on an object using a variable as the key. 
+For example, if you have a variable propertyName with value "name", you can create an object with a 
+property named name using the syntax { [propertyName]: 'John' }.
+
+object[key] is used to ACCESS a property of an object, 
+while [key] is used to CREATE a dynamic object property.
+
+-----------------------------------------------------------------------

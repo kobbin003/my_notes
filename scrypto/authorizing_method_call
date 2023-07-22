@@ -1,0 +1,31 @@
+									
+									⭐️ ⭐️ ⭐️ authorizing method calls: ⭐️ ⭐️ ⭐️ 
+
+▶️ Blueprint: 
+
+ pub fn instantiate_comp() {
+ 	// create a badge
+ 	let some_admin_badge: = ResourceBuilder::new_fungible()
+ 				.divisibility(DIVISIBILITY_NONE)
+                .mint_initial_supply(1);
+                
+	// Setting up the access rules
+	let access_rules_config: AccessRulesConfig = AccessRulesConfig::new()
+		.method("some_method", rule!(require(some_admin_badge)), LOCKED)
+		.default(rule!(allow_all), LOCKED);
+		
+	Self{
+	//...
+	}
+	.instantiate()
+	.globalize_with_access_rules(access_rules_config)
+ 	
+ }
+ 
+ 
+▶️ CALL:
+ use "--proofs" flag
+ 
+ resim call-method [component_address] some_method --proofs 1,[resource_address of some_admin_badge]
+ 
+ 

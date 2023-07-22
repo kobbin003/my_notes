@@ -1,0 +1,21 @@
+HOW TO SET CHILD TO SCROLL WITHOUT SCROLLING THE PARENT:
+
+.container {
+  /* ... */
+  overflow: hidden;
+  max-height: x; //* containers max-height should be such that 
+  					"container-height" + "padding" + "other vertical items" should be < 100vh.
+}
+
+.child {
+  overflow: scroll;
+  height: //* see 👁️‍🗨️️ ;
+  overscroll-behavior: contain; //* scrolling on child does not trigger the scroll event on the parent.
+  								// * This will only scroll the parent container if your mouse leaves the child element to the parent.
+  								//* NOT IMPORTANT in spotify clone.
+}
+
+ 👁️‍🗨️️ " height of child " + " any element or space above it till the top of viewport "
+	SHOULD NOT exceed 100vh 
+	IN OTHER WORDS: " the bottom of the child element should not go below 100vh. " 
+	OR ELSE scroll will get created on the <body>

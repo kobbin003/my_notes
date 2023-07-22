@@ -1,0 +1,37 @@
+*👉️ R U L E  O F  H O O K :
+                ⭐️ DO'S ⭐️
+✅ Call them at the top level in the body of a function component.
+✅ Call them at the top level in the body of a custom Hook.
+				⭐️ DONT'S ⭐️
+🔴 Do not call Hooks inside conditions or loops.
+🔴 Do not call Hooks after a conditional return statement.
+🔴 Do not call Hooks in event handlers.
+🔴 Do not call Hooks in class components.
+🔴 Do not call Hooks inside functions passed to useMemo, useReducer, or useEffect.
+
+*👉️ DO not use hook inside a hook.
+Therefore use useEffect in custom hooks or else use useEffect in the component.
+Or else you will get "Invalid Hook Call" ERROR.
+
+*👉️ rule of hook call [case:useEffect]:-
+If you use useEffect in a customhook, don't call that hook inside useEffect of a component.
+But if the customhook doesn't have any hook inside it's code, then you can call that hook inside the useEffect 
+of a component.
+
+*👉️ work around to use a customhook inside useEffect:
+- Let that hook return a function & then you can call that 'returned' function inside the useEffect.
+e.g const { a_function } = useCustomHook();
+	useEffect(() => {
+		a_function();
+	}
+	
+*👉️ useFetch hook:-
+keep the fetch inside the useEffect with argument of fetch as dependencies.
+
+If not under useEffect,then every rerender of it's calling-component will result in "re" fetching & If fetching results
+in(not necessarily) re-rendering of it's calling-component, it will  "re" fetch after the rerender of the 
+calling-component. As you can see this might lead to an 👁️‍🗨️️ infinite loop 👁️‍🗨️️.
+
+------------------------------------------------------------------------------------------------------
+
+

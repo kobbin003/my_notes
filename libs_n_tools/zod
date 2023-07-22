@@ -1,0 +1,22 @@
+⚡️ZOD:
+
+step 1 :- create a schema of type which your data has to pass:
+	case 1: const mySchema = z.string()  
+					// if your data has to pass as a string
+					
+	case 2: const mySchema = z.object({id:z.number(), name: z.string()})
+					// if your data has to pass as an object { id:number, name: string}
+					
+step: 2 - Validate your data against the schema your created:
+
+	case 1: mySchema.safeParse("a_string") // {success:true; data:"a_string"}
+			OR
+			mySchema.parse("a_string") // "a_string"
+	
+	case 2: myShema.safeParse({ id:1, name: "kobin"}) // {success:true; data:{ id:1, name: "kobin"}}
+			OR
+			myShema.parse({ id:1, name: "kobin"})		// { id:1, name: "kobin"}			
+
+👉️ parse v/s safeParse: 
+	parse throws error when validation fails.
+	safeParse does not throw error when validation fails.

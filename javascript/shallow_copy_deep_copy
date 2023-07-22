@@ -1,0 +1,53 @@
+			
+			⭐️ ⭐️ ⭐️ shallow_copy v/s deep_copy : ⭐️ ⭐️ ⭐️
+
+👉️ in shallow copy all the primitives' "values" are copied
+   BUT the objects' "reference" are copied.
+
+	▶️ step : 1
+		 So, suppose we have an object:
+		const obj = {
+			a: "aaa",
+			b: true,
+			c: {
+				d: "one",
+			},
+		};  
+		
+	 ▶️ step : 2 
+	 	and we "shallow" copy it:
+		const clonedObj = {
+			...obj,
+		};  // here we have used spread operator;
+			// same effect can be achieved from Object.assign(target, source)
+			
+	 ▶️ step : 3 
+	 	if we mutate our original object:
+		obj.b = false;
+		obj.c.d = "two";
+		
+	 ▶️ step : 4
+	 	if we check our cloned object:
+		console.log(clonedObj)
+		// LOGS: {
+			a: "aaa",
+			b: true,
+			c: {
+				d: "two",
+			},
+		};
+		//👁️‍🗨️️ see how primitives remains the same but the object gets modified.
+			since we copied the reference of the nested object, any change in the original nested object
+			will bring change in the cloned object's nested object.
+			
+	☀️ if we had deep copied it : [Use: clonedeep from lodash, structuredClone() ]
+	LOG: {
+			a: "aaa",
+			b: true,
+			c: {
+				d: "one",
+			},
+		};
+		//👁️‍🗨️️ change in original object will not bring change in the cloned object.
+	
+	

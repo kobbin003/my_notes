@@ -1,0 +1,3 @@
+localstorage is not a reactive value;
+
+dont use it as dependency on useEffect.

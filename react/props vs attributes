@@ -1,0 +1,20 @@
+			⭐️⭐️⭐️⭐️⭐️ PROPS v/s ATTRIBUTES : ⭐️⭐️⭐️⭐️⭐️
+			
+👉️👉️👉️ "props" are for React Components.
+	   WHEREAS "attributes" are "in-built" as well as "custom" in the HTML elements like <input/> etc.
+	  
+	  ▶️ setting props:
+	     - <Comp prop1={"value"} prop2={a_variable_set_in_the_component}> ...elements </Comp>
+	  
+	  ▶️ Dynamic setting of prop:
+	     - <Comp prop1={state} /> ; then use setState() to update state
+
+	  ▶️ setting attributes: 👁️‍🗨️️[ only inbuilt attributes can be added ]👁️‍🗨️️
+	     - <input type="text" id="id" />
+	  
+	  ▶️ Dynamic setting of attributes: 👁️‍🗨️️[ Here, custom attributes can be added ]👁️‍🗨️️
+	     - element.setAttribute("key","value")
+	     
+👉️👉️👉️ PREFER "class" over "className" in react, if you want to control "adding" and "removing" of class.
+	   IN THIS CASE we will be using setAttribute() and removeAttribute().
+	   BUT Keep in mind the element has to be a HTML_ELEMENT. or else use className

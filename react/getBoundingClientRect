@@ -1,0 +1,43 @@
+			
+			⭐️ ⭐️ ⭐️ ⭐️ ⭐️ HOW TO GET THE POSITION AND DIMENSION OF AN ELEMENT : ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ 
+
+🟡️ use : getBoundingClientRect()
+
+👁️‍🗨️️ 👁️‍🗨️️ 👁️‍🗨️️ The getBoundingClientRect() method is not available directly on the EventTarget type. 
+To access it, you need to ensure that the target element is an HTMLElement.
+Hence, checkout 🗯️
+
+👉️ example.tsx:
+
+import React, { useState } from "react";
+
+const MyComponent = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleClick = (e) => {
+    const target = e.target as HTMLElement; 🗯️
+    const rect = target.getBoundingClientRect();
+    setPosition({ x: rect.left, y: rect.top });
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click me</button>
+      <p>Position: {`(${position.x}, ${position.y})`}</p>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+PROPERTIES:
+DOMRect {
+	bottom: number
+	height : number
+	left : number
+	right : number
+	top : number
+	width : number
+	x : number
+	y : number
+}

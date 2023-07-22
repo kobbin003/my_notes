@@ -1,0 +1,39 @@
+
+https://blog.logrocket.com/how-to-set-up-node-typescript-express/
+
+
+npm i -D typescript @types/express @types/node
+
+npx tsc --init --> generates tsconfig.json file
+* unmute the outDir in the tsconfig.json file
+* create a tsc file if some unkown error shows up in tsconfig.json file
+
+
+ALTERNATIVELY you can use:
+- tsc-node
+- deno
+etc...
+
+
+-------------------------------------------------------------------------------
+
+npm i {
+	"@trpc/server",
+    "@types/express",
+    "@types/node",
+    "express",
+    "nodemon" 
+    }
+    
+script: {
+ "server": "nodemon index.ts"
+}
+
+⭐️ When using Nodemon with TypeScript, you need a tool that can transpile TypeScript code on-the-fly and 
+run the resulting JavaScript code. Nodemon itself doesn't have built-in TypeScript support, so you need 
+to use a TypeScript runner like "ts-node" or "ts-node-dev" in conjunction with "Nodemon" to achieve this.
+
+----------------------------------------------------------------------------------
+without packages:
+
+

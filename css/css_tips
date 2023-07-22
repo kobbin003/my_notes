@@ -1,0 +1,59 @@
+-------------------------------------- transform: scale(_value):
+* it does not work on elements that have inline type display;
+  - to make it work assign {display: inline-block;}
+
+* can be used to set text below 14px(it is the lowest allowed in the browser)
+
+* use tranform-origin: top left; -> to maintain its start position as it was before the scale.
+
+
+-------------------------------------- selecting nth-child from x to y:
+[child]:nth-child(n+3) --> selects the child from 4th child
+[child]:nth-child(-n+4) --> selects the child till 5th child
+
+therefore to select 3rd and 4th child:
+[child]:nth-child(n + 3):nth-child(-n + 4):hover
+
+CORRECTION:
+[child]:nth-child(n+3) --> selects the child from 3rd child
+[child]:nth-child(-n+4) --> selects the child till 4th child
+
+therefore to select 3rd and 4th child:
+[child]:nth-child(n + 3):nth-child(-n + 4):hover
+
+-------------------------------------- css position:
+if you want to position a child relative to its parent:
+
+set parent's position to relative and the child's position to absolute
+
+***CORRECTION***
+parent's position can be anything(It must be posiitoned though) other than static to get this result. 
+
+"absolute: The element is positioned relative to its first positioned (not static) ancestor element."
+
+-------------------------------------- { position: fixed } :
+a fixed elements parent is body, not it's parent container.
+
+So if you set it's width: 100%, it will be 100% of the body rather than 100% of it's parent container's size.
+
+-------------------------------------- scroll bar width:
+Setting width to 100vw can cause a horizontal scrollbar to appear because the vw unit takes into account the width 
+of the entire viewport, including the width of any vertical scrollbars that are present.
+
+Therefore to not let the horizontal scroller appear, do this:
+.container{
+width:calc(100vw - (100vw - 100%))
+}
+
+Here: 100vw = viewport_width + scrollbar_width; Thats why horizontal scroll bar appears, because width is greater than
+the viewport_width.
+& 100% = width of the parent of .container.
+**provided the container's parent's width is equal to the viewport_width. 
+
+
+
+
+
+
+
+

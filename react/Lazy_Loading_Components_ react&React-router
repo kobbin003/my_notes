@@ -1,0 +1,12 @@
+					
+					⭐️ ⭐️ ⭐️ ⭐️ ⭐️ Lazy Loading in react and react router: ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ 
+
+🟡️ 🟡️ 🟡️ 
+const Component = React.lazy(() => import("/./component_path"))
+
+export const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <Component />
+	}
+])

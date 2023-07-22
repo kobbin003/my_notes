@@ -1,0 +1,11 @@
+Data-fetching;
+
+1. fetch in parent.
+	- fired and resolved in parallel.
+	- fired in parallel but resolved independently.
+2. fetch in child.
+
+Which approach you would take depends on use-case.
+
+points to note:
+👉️ any re-render in parent will re-render all the childs.

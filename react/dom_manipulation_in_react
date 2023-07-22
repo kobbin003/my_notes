@@ -1,0 +1,12 @@
+							
+							⭐️⭐️⭐️⭐️⭐️ DOM MANIPULATION IN REACT : ⭐️⭐️⭐️⭐️⭐️
+
+👉️👉️👉️ Get all the Input elements on formSubmit:
+
+	[ e: SyntheticEvent<HTMLFormElement> ]
+	const form = e.target as HTMLFormElement; // returns the Form element in "html format" 
+	const inputs = form.querySelectorAll("input"); // returns an array of all the Input childrens
+	
+👉️👉️👉️ get the current element
+
+	e.currentTarget; // is the element where the event is being performed.

@@ -1,0 +1,62 @@
+list of all macro_rules of scrypto:
+access!
+assert!
+borrow!
+borrow_global!
+borrow_resource!
+borrow_resource_manager!
+constant!
+define_event!
+define_function!
+define_struct!
+define_trait!
+do!
+drop!
+else!
+emit_event!
+if!
+import!
+let!
+match!
+mod!
+mut!
+new!
+or!
+require!
+return!
+struct!
+trait!
+type!
+while!
+These macro_rules can be used to generate code that is more concise and easier to read. For example, the 
+access macro_rule can be used to define access rules for resources. 
+The assert macro_rule can be used to check if a condition is met. 
+The borrow macro_rule can be used to borrow a resource. 
+The borrow_global macro_rule can be used to borrow a global resource. 
+The borrow_resource macro_rule can be used to borrow a resource from a contract. 
+The borrow_resource_manager macro_rule can be used to borrow a resource manager. 
+The constant macro_rule can be used to define a constant. 
+The define_event macro_rule can be used to define an event. 
+The define_function macro_rule can be used to define a function. 
+The define_struct macro_rule can be used to define a struct. 
+The define_trait macro_rule can be used to define a trait. 
+The do macro_rule can be used to execute a block of code. 
+The drop macro_rule can be used to drop a resource. 
+The else macro_rule can be used to define an else block. 
+The emit_event macro_rule can be used to emit an event. 
+The if macro_rule can be used to define an if block. 
+The import macro_rule can be used to import a module. 
+The let macro_rule can be used to define a variable. 
+The match macro_rule can be used to match on a value. 
+The mod macro_rule can be used to define a module. 
+The mut macro_rule can be used to define a mutable variable. 
+The new macro_rule can be used to create a new instance of a struct. 
+The or macro_rule can be used to combine two expressions. 
+The require macro_rule can be used to check if a condition is met. 
+The return macro_rule can be used to return from a function. 
+The struct macro_rule can be used to define a struct. 
+The trait macro_rule can be used to define a trait. 
+The type macro_rule can be used to define a type. 
+The while macro_rule can be used to execute a block of code while a condition is met.
+
+

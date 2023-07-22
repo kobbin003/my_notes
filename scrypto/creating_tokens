@@ -1,0 +1,30 @@
+	
+	------------------ 🗯️⭐️  C R E A T I N G  N O N - F U N G I B L E  T O K E N ⭐️ -----------------------
+	
+step: 1: Define the data structure of NFT first.
+step: 2: pass an array of instance of NFT to the resourcebuilder under the .mint_initial_supply method.
+		[ we want the id of our NFTs to be of the integer type so we call new_integer_non_fungible() ]
+		
+		🛑️ MIXED N F T:
+		
+🗯️⭐️  choosing whether there is an initial supply or not will determine whether the resource will return a 
+Bucket or a ResourceAddress. ⭐️
+ When creating a new resource with an initial supply, those resources will immediately be deposited in a bucket. 
+Hence, 
+	case 1:- const add:ResourceAddress = new ResourceBuilder::new_fungible().create_with_no_intial_supply();
+	case 2:-const add:Bucket = new ResourceBuilder::new_fungible().mint_intial_supply(1000);
+	
+In case 1 it is returning a ResourceAddress & in case 2 it is returning a Bucket.
+
+You can still view the 'ResourceAddress' of the Resource with the 'Bucket' calling the special ".resource_address()" 
+method on the 'Bucket' itself.
+
+🗯️⭐️  V A U L T S ⭐️
+
+ The Vault type offers two functions that we can utilize [ BOTH ARE FOR CREATING A NEW VAULT ]:
+ - .new(ResourceAddress) -> It can then accept resources with the specified ResourceAddress 
+ - .with_bucket(Bucket) -> The Vault will then define itself with the ResourceAddress of the resource deposited from 
+ 							the Bucket. 
+
+*** with "create_with_no_intial_supply()" you have to define the struct of the nft.
+	i.e const resource_address_of_nft = ResourceBuilder::new_integer_non_fungible::<Nft_struct>()

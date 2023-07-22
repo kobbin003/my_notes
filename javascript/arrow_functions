@@ -1,0 +1,56 @@
+------------------------------------------- arrow function do not have "this" ------------------------------------
+*they don’t have their “own” this. 
+If we reference this from such a function, it’s taken from the outer “normal” function.
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList() {
+    this.students.forEach(function(student) {
+     *** // Error: Cannot read property 'title' of undefined ***
+      alert(this.title + ': ' + student);
+    });
+  }
+};
+
+group.showList();
+/* Here students is not defined inside the scope of showList function*/
+
+But if we replace it with arrow function
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+
+  showList = () => {
+    this.students.forEach(function(student) {
+     *** // Error: Cannot read property 'title' of undefined ***
+      alert(this.title + ': ' + student);
+    });
+  }
+};
+group.showList();
+/* Here this is taken from outer normal function viz. group
+BTW function is an object too in javascript. */
+
+
+----------------------------------------- Arrow functions also have no arguments variable ------------------------------
+
+let a = 10;
+
+function traditionalFunction(b) {
+  console.log(arguments);
+}
+
+const arrowFunction = (c) => {
+  console.log(arguments);
+}
+
+traditionalFunction(1, 2, 3); // logs [1, 2, 3]
+arrowFunction(20); // logs Error
+
+In this example, traditionalFunction logs the "arguments" object, which contains all of the 
+arguments passed to the function. 
+In contrast, arrowFunction does not have its own arguments object. Instead, it uses the value of a 
+from the scope it was defined in, and the argument c that was passed in. 
+
+

@@ -1,0 +1,26 @@
+							⭐️ ⭐️ ⭐️ input styling : ⭐️ ⭐️ ⭐️
+
+👉️ border: none -> to remove the shadow thingy.
+👉️ padding-left: px -> to move the caret.
+👉️ caret: unset; -> to not display the caret. but it gets displayed on active.
+	caret-color: #color; -> sets the color of the caret.
+	background-color: #color; -> sets the background of the input
+
+👉️ pesudo-elements w.r.t inputs :
+
+Pseudo-elements like ::before and ::after are typically used with container elements that have content. 
+However, input elements are self-closing and cannot have child elements.
+If you want to add additional elements or visuals to the input field, you can wrap the input element inside 
+a container element and apply the pseudo-element styles to the containe
+
+👉️ styling placeholder:
+ use :- placeholder selector.
+ i.e :- &::placeholder { 
+ 		 // css..
+ 		}
+
+👉️ Removing the default "clear-icon":
+
+	&::-webkit-search-cancel-button {
+ 			display: none;
+		}

@@ -1,0 +1,12 @@
+			
+			⭐️ ⭐️ ⭐️ HOW TO PASS A BUCKET AS ARGUMENT OF A METHOD-CALL : ⭐️ ⭐️ ⭐️ 
+
+👉️ SYNTAX:
+	< resim method-call [COMP_ADDR] [METHOD_NAME] [BUCKET_RESOURCE_ADDR]:[RESOURCE_AMOUNT] >
+
+	☀️ suppose we have a method:
+	pub fn some_method(&self, token:Bucket){
+		//..code
+	}
+	
+	< resim method-call [COMP_ADDR] some_method token_resource_address:1 >

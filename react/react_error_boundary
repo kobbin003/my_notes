@@ -1,0 +1,30 @@
+
+					⭐️ ⭐️ ⭐️ REACT-ERROR-BOUNDARY ⭐️ ⭐️ ⭐️
+					
+👉️ step 1: install react-error-boundary:
+
+ < npm install react-error-boundary >
+ 
+👉️ step 2: import the requirements :-
+
+ import { ErrorBoundary, FallbackProps } from "react-error-boundary";
+ 
+👉️ step 3: create a fallback function which will handle the error message :-
+
+ function fallback({ error, resetErrorBoundary }: FallbackProps) {
+	// Call resetErrorBoundary() to reset the error boundary and retry the render.
+
+	return (
+		<div role="alert">
+			<b>Something went wrong:</b>
+			<pre style={{ color: "red" }}>ERROR: "{error.message}"</pre>
+		</div>
+	);
+ }
+
+👉️ step 4: wrap your App component with  ErrorBoundary :-
+
+ <ErrorBoundary FallbackComponent={fallback}>
+	<App />
+ </ErrorBoundary>
+

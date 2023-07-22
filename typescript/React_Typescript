@@ -1,0 +1,66 @@
+💬️⭐️ REACT_TYPESCRIPT :::
+
+👉️👉️👉️ type of ::-
+setState: React.Dispatch<React.SetStateAction<S>>, where S is the type of the state value.
+e:  < React.${EventType}<HTML${ElementType}Element> >
+	React.ChangeEvent<HTMLInputElement>  ---> onChange
+	React.SyntheticEvent                ---> onSubmit
+	React.MouseEvent<HTML${element}Element>  ---> onClick , onMouse or any mouseEvent
+		👁️‍🗨️️ Button on <button> click & Anchor on <a> click
+	React.ReactNode 	                ---> children
+		👁️‍🗨️️ { children?: React.ReactNode }: required if passing prop type to a react component that has a children.
+
+👉️👉️👉️ INDEX SIGNATURE :-
+
+type X {
+	[key:string]:string
+	}
+[key: string] is an index signature that allows an object to have any number of 
+additional properties with keys of type string. 
+It is a way to define a type for an object where the keys are not known in 
+advance but are instead determined dynamically at runtime.
+🗯️ USAGE:
+type UpdaterObject = {
+		[key: string]: React.Dispatch<React.SetStateAction<string>>;
+		// name: React.Dispatch<React.SetStateAction<string>>;
+		// email: React.Dispatch<React.SetStateAction<string>>;
+	};
+const updaterObject: UpdaterObject = {
+	name: setName,
+	email: setEmail,
+};
+const handleOnChange = (
+	e: React.ChangeEvent<HTMLInputElement>,
+	key: string
+) => {
+	const updater = updaterObject[key];  💬️//here key is of type string, we have to set UpdaterObject type's 
+											key as string.
+	updater(e.target.value);
+};
+-----------><input
+					type="text"
+					value={name}
+					onChange={(e) => handleOnChange(e, "name")}
+			/>
+
+👉️👉️👉️ Generic type <T>:
+supoose this a useFetch hook:
+type ReturnType<T>{
+
+}
+const useFetch = <T>(arg): ReturnType<T> =>{..code}
+
+This will show this ⛔️error in '.tsx' file: 
+	" JSX element 'T' has no corresponding closing tag. "
+It is because " In JSX, angle brackets (<>) are reserved for defining JSX elements and cannot 
+				be used to directly reference generic types. If you encounter the error "JSX element 'T' has 
+				no corresponding closing tag", it means that JSX is treating T as a JSX element instead of 
+				a generic type. "
+	😎️ WORKAROUND :-
+	1. const useFetch = <T,>(arg): ReturnType<T> =>{..code}
+	OR
+	2. const useFetch = <T extends {}>(arg): ReturnType<T> =>{..code}
+	
+👉️👉️👉️ TYPE ASSERTIONS
+
+👉️👉️👉️ TYPEGUARD

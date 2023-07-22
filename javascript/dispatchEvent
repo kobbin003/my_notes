@@ -1,0 +1,9 @@
+dispatchEvent:
+
+- It is a method to create custom events. It can also be used over the built-in events such as "storage","click" etc.
+
+- Use it to trigger localStorage Change.
+
+e.g window.dispatchEvent(new Event("storage"));
+
+	this will trigger the storage event.

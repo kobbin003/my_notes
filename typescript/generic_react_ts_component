@@ -1,0 +1,9 @@
+					GENERIC REACT COMPONENT : 
+	
+	1. create  the component:
+	
+	const GenericComponent = <T extends x>({prop1}:{prop1: T}) => { //..code}
+	*x = the type of prop1 i.e [] or {} or {}[]..etc
+	2. call the component:
+	
+	<GenericComponent<PropType> prop1={propValue} />

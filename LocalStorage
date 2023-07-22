@@ -1,0 +1,16 @@
+LOCALSTORAGE:
+👉️ "in local storage the value are stored as string"
+ 
+ if somevalue = undefined; [in the localStorage]
+ localStorage.getItem("somevalue") === undefined // false
+ localStorage.getItem("somevalue") === "undefined" // true
+ 
+ BUT if the key is not present in the localstorage then localStorage.getItem() will return 
+ null[i.e the object not the string "null"]
+ 
+👉️ ways to get item value:
+▶️ localStorage.getItem("key") // returns value
+ OR
+▶️ localStorage["key"]		// returns value
+ OR
+▶️ localStorage.hasOwnProperty("key") // boolean

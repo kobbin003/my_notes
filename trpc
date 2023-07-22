@@ -1,0 +1,44 @@
+
+🌫️⭐️ benefits:
+-👉️ Full autocompletion
+-👉️ batching systems: returns responses of multiple fetches in a single go at once, 
+					if those requests were made in a short window of time.
+
+🌫️⭐️ points to be noted
+-👉️ use typescipt.
+-👉️ server and client should be in the same repository.
+
+
+🌫️⭐️ concepts:
+-👉️ procedure
+	- .query
+	- .input
+	- .mutation
+-👉️ adapters[ i am using express adapters ]
+-👉️ input validation [use zod]
+	- .input()
+	- .output()
+-👉️ context:  1. createContext in the trpcExpress.createExpressMiddleware
+			2. add ".context<typeof createContext>()" in the "t" in "trpc.ts" file
+				[this will enable the autocomplete in the client side]
+			*** dont use ant type for createContextWSS(websocket context)
+				
+-👉️ middleware: [ used for authentication ]
+ 1. create middleware :- 
+ 	const authMiddleware = t.middleware(({ctx,next})=>{ //code.. }) //* args are the same as the one in the mutation.
+ 2. create a procedure for that middleware :- 
+ 	const authProcedure = t.procedure.use(authMiddleware)
+ 3. create a route that returns the context returned by the authMiddleware.
+ 	const authRouter = t.router({
+		authData: authProcedure.query((ctx) => ctx),
+	});
+	
+-👉️ WebSockets :
+ 1. npm i ws
+ 2. const wss = new ws.Server({ server });
+	const handler = applyWSSHandler({
+		wss,
+		router: mergedRouters,
+		createContext: createWSSContext,
+	});
+ 3. create subscription route

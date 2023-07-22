@@ -1,0 +1,13 @@
+		
+		⭐️ ⭐️ ⭐️ <img /> has onLoad and onError events in reactjs. ⭐️ ⭐️ ⭐️
+
+// onError handler :-
+👉️ const handleError = (e: SyntheticEvent<HTMLImageElement>) => {
+		console.log("image error");
+		e.currentTarget.src = src_of_fallback_jpg; //👁️‍🗨️️ we can set the src of fallback.jps if image fails to load
+	};
+	
+// onLoad handler :-
+👉️ const handleLoad = (e: SyntheticEvent<HTMLImageElement>) => {
+		console.log("image loaded");
+	};

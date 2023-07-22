@@ -1,0 +1,18 @@
+URL:
+
+👉️ window.location   ->  gives info on the current location
+👉️ window.location.href="somurl"  -> sends to "someurl"
+
+👉️ window.location.search -> returns the url without the host i.e if url ="http://localhost:7000?query=abc, 
+																it returns ?query=abc
+👉️ URLSearchParams:
+
+ const urlparams = new URLSearchParams(input)
+ if input = http://locahost:7000?foo=bar&baz=qux
+	output = { 'foo' => 'bar', 'baz' => 'qux' }
+	--> use to extract query in frontend. urlparams.get("foo")
+if input = {foo: "bar" , baz : "qux }
+	output = { 'foo' => 'bar', 'baz' => 'qux' }
+	--> use to create query to attach to a url in backend.
+	
+👉️

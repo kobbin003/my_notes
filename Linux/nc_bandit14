@@ -1,0 +1,45 @@
+nc:
+
+The `nc` (netcat) command is a versatile networking utility that allows you to 
+- establish TCP or UDP connections, 
+- send and receive data, 
+- and perform various network-related tasks. 
+It can be used for both simple and complex network operations.
+
+Here is the basic syntax of the `nc` command:
+
+⭐️ nc [options] [host] [port] ⭐️
+
+- `[options]`: Optional command-line options that modify the behavior of `nc`.
+- `[host]`: The hostname or IP address of the target server.
+- `[port]`: The port number on which to establish the connection.
+
+Some common use cases of the `nc` command include:
+
+1. Port scanning: You can use `nc` to scan for open ports on a remote host:
+   
+   👁️‍🗨️️ < nc -zv example.com 1-100 >
+   
+   This command will check if ports 1 to 100 are open on the `example.com` host.
+
+2. File transfer: `nc` can be used to transfer files between two systems:
+   
+   👁️‍🗨️️ < nc -l -p 1234 > received_file.txt >
+   
+   This command listens on port 1234 and saves the received data into the `received_file.txt` file.
+
+3. Port forwarding: `nc` can act as a proxy for forwarding connections:
+   
+   👁️‍🗨️️ < nc -l -p 8080 | nc target_host target_port >
+   
+   This command listens on port 8080 and forwards incoming connections to `target_host` on `target_port`.
+
+4. Network debugging: `nc` can help debug network-related issues by manually sending and receiving data:
+   
+   👁️‍🗨️️ < nc example.com 80 >
+   
+   This command establishes a connection to `example.com` on port 80, allowing you to send and receive data manually.
+
+	⭐️ step 4 was what we did for solving bandit14-15 ⭐️
+
+

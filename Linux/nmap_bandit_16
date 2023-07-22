@@ -1,0 +1,30 @@
+nmap:
+ ⭐️ install nmap: < apt-get install nmap >
+ 
+ ⭐️ nmap is used for port scanning;
+ 
+ ⭐️ syntax: < nmap [Scan Type...] [Options] {target specification} >
+ 
+ ⭐️ common usage:
+ 
+ 	▶️ < nmap <target> > :  Nmap will scan the target's most common 1,000 ports by default.
+ 	[👁️‍🗨️️ *target = ipaddress / hostname. ]
+ 	▶️ < nmap -p <port> <target> > : This command allows you to specify specific ports to scan.
+ 								You can provide a comma-separated list of individual port numbers 
+ 								OR specify a range of ports using a hyphen. For example, -p 80,443 or -p 1-1000.
+ 
+ 	▶️ < nmap -p- <target> > : scans all 65,535 ports on the target.
+ 
+ 	▶️ < nmap <target1> <target2> <target3> ... > : multiple targets to scan, separating them with spaces. 
+ 												Nmap will scan each target sequentially.
+ 
+ 	▶️ < nmap -sV <target> > : performs service version detection, attempting to identify the specific version of 
+ 						the services running on the target ports.
+ 
+ 	▶️ < nmap -O <target> > : performs OS detection, trying to determine the operating system running on the target host.
+
+
+
+
+
+

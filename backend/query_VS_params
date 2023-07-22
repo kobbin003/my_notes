@@ -1,0 +1,16 @@
+
+---------------------------------------- req.query vs req.params -------------------------------------------------
+
+app.get("/download/:id", async (req, res) => {
+  const id = req.params.id; // Use req.params.id to access the id from the URL parameter
+  res.send(id);
+});
+
+try: http://localhost:3000/download/9cc2f32b-0e6d-46bb-bf80-1bc25a7c8341
+
+app.get("/download", async (req, res) => {
+  const id = req.query.id;
+  res.send(id);
+});
+
+try: http://localhost:3000/download?id=9cc2f32b-0e6d-46bb-bf80-1bc25a7c8341

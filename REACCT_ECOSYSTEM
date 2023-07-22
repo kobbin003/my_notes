@@ -1,0 +1,81 @@
+👉️ Getting Started:
+	▶️- online sandboxes: stackblitz, codesandbox
+	▶️- build tool: vite
+	▶️- others: nextjs
+	
+👉️ Routing:
+	▶️- React router
+	▶️- tanstack router ---> ⛔️ dont have much features as react router.
+	▶️- Nextjs -> ✅️ not required as it has built in routing.
+	
+👉️ Client State Management:
+	▶️- redux-toolkit
+	▶️- zustand
+	
+👉️ Server State Management:
+	▶️- tanstack query
+	▶️- reduxtoolkit query
+	▶️- apollo client ---> ✅️ suited for graphql API.
+	
+👉️ Form Handling:
+	▶️ formik ---> ⛔️ not actively maintained.
+	▶️ react-hook-form ---> ✅️ component does not re-render on evry change in the field value.
+	
+👉️ Testing:
+	▶️ vitest + react testing library ---> ✅️ unit testing.
+	▶️ playwright ---> ✅️ end to end testing.
+	
+👉️ Styling:
+	▶️ tailwindcss ---> utility first css framework, has predefined classes for building UI components.
+	▶️ styled-components ---> css-in-js
+	▶️ emotion ---> css-in-js
+	
+👉️ Component Libraries:
+	▶️ materialUI
+	▶️ mantineUI
+	▶️ chakra-ui
+	▶️ antdesign
+	▶️ tailwindcss frameworks: headlessUI, daisyUI, shadcn
+	
+👉️ Animation:
+	▶️ react spring
+	▶️ framer motion
+	
+👉️ Data Vizualization:
+	▶️ victorychart
+	▶️ react-chartjs-2
+	▶️ recharts ---> ✅️ suitable for beginners in data vizualisation.
+	
+👉️ Table:
+	▶️ tanstack table ---> ✅️ best.
+	
+👉️ i18n:
+	▶️ react-i18next
+	▶️ formatjs
+	
+👉️ DevTools:
+	▶️ react developers tools [chrome extension] ---> for react
+	▶️ redux devtools [chrome extensions] ---> for redux
+	▶️ testing playground [chrome extension] ---> for react testing library
+	▶️ react-hook-form devtools
+	▶️ tanstack query devtools
+
+👉️ Documentation:
+	▶️ docusaurus ---> for reactjs
+	▶️ nextra ---> for nextjs
+
+👉️ Component Dev Env:
+	▶️ storybook.
+
+👉️ Type Checking:
+	▶️ typescript.
+
+👉️ mobile apps:
+	▶️ react native.
+
+👉️ bonus:
+	▶️ dndkit ---> for drag and drop functionality.
+	▶️ react dropzone ---> for file uploads.
+	▶️ firebase ---> for authenication.
+	▶️ supabas ---> for authentication.
+

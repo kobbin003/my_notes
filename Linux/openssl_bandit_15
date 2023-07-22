@@ -1,0 +1,15 @@
+openssl :
+
+⭐️ < openssl command [ options ... ] [ parameters ... ] >
+ 
+⭐️ s_client[👁️‍🗨️️command] is the implementation of a simple client that connects to a server using SSL/TLS.
+
+⭐️ usage: < s_client [options] [host:port] >
+
+	▶️ s_client command implements a generic SSL/TLS client which can establish a
+	   transparent connection to a remote server speaking SSL/TLS. It's
+	   intended for testing purposes only and provides only rudimentary
+	   interface functionality but internally uses mostly all
+	   functionality of the OpenSSL ssl library.
+
+

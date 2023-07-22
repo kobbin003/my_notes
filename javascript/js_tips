@@ -1,0 +1,9 @@
+- parameters are the placeholder for arguments.
+ so arguments are the values which we provide in place of parameters during the function calls.
+ 
+- return counter++ vs return counter = counter +1
+When using counter++, the value of counter is returned first and then incremented. 
+So if counter was 1, counter++ would return 1 and then set counter to 2.
+
+When using counter = counter + 1, the value of counter is incremented first and then returned. 
+So if counter was 1, counter = counter + 1 would set counter to 2 and then return 2.

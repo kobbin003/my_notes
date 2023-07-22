@@ -1,0 +1,27 @@
+
+						⭐️ ⭐️ ⭐️ TYPE ASSERTION: ⭐️ ⭐️ ⭐️ 
+
+👉️ type assertions:
+	< data as type >
+
+👉️ Type assertion in TypeScript is a way to explicitly specify the type of a value, overriding the default type inference. 
+It allows you to tell the TypeScript compiler that you know more about the type of a value than it does, allowing you 
+to perform certain operations or access specific properties on the value.
+
+👉️ Type assertion can be done in two ways:
+
+	▶️ 1.Angle Bracket Syntax: <Type>value
+		 let value: any = 'Hello';
+		 let length: number = (<string>value).length;
+
+	▶️ 2. As Syntax: value as Type
+		 let value: any = 'Hello';
+		 let length: number = (value as string).length;
+
+----------------------------------------------------------------------
+
+👉️ In TypeScript, using type assertions does not perform a runtime type check. 
+   It only tells the TypeScript compiler to treat data as the specified type during compilation.
+
+👉️ * can be used while writing a data to a variable.
+👉️ * not used for type checking.

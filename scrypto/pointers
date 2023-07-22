@@ -1,0 +1,3 @@
+Pointers:
+
+#[derive(ScryptoSbor)] before evry enum

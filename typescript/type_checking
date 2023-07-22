@@ -1,0 +1,27 @@
+
+						⭐️ ⭐️ ⭐️ TYPE CHECKING ⭐️ ⭐️ ⭐️
+
+👉️ To perform a runtime type check, you can use a 👁️‍🗨️️ type guard function 👁️‍🗨️️ or use the instanceof operator 
+   (if applicable).
+
+
+👉️ in v/s typeof v/s instanceof:
+
+	▶️ in: The in operator in JavaScript is used to check if a specified property exists in an object. 
+		< "value" in x >
+
+	▶️ typeof: The typeof operator in JavaScript is used to determine the type of a value or variable at runtime.
+		< typeof x == "type">
+
+	▶️ instanceof: The instanceof operator in JavaScript is used to check if an object belongs to a specific class or constructor function.
+			< x instanceof type >
+
+👉️ type:
+	"string"
+	"number"
+	"bigint"	
+	"boolean"
+	"symbol"
+	"undefined"
+	"object"
+	"function"

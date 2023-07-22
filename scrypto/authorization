@@ -1,0 +1,67 @@
+					
+					⭐️ ⭐️ ⭐️ AUTHORIZATION ⭐️ ⭐️ ⭐️
+
+			🟡️ 🟡️ 🟡️ Scrypto’s authorization model starts with three core concepts: 🟡️ 🟡️ 🟡️ 
+
+ 👉️ Badges : 
+		A badge is simply any token or resource that is used for authentication and authorization. 
+		Badges can either be a Fungible or NonFungible resource type;
+		
+ 👉️ Proofs : 
+	Proofs are a transient instance of a resource that can only exist within the duration of the transaction. 
+	For authorization and authentication, a Proof of the badge is sent instead of the actual badge. 
+	This is because assets on Scrypto have physical characteristics. 
+	When we send the physical badge to a component for authorization and authentication, 
+	that badge is physically being transferred away from our possession to the vault’s possession, 
+	effectively giving away our ownership of that badge. 
+	This can be dangerous because sending a badge to a malicious component effectively allows that component 
+	to use the badge for other means. 
+	
+ 👉️ Access Rules :
+	This can be dangerous because sending a badge to a malicious component effectively allows that component 
+	to use the badge for other means. 
+
+							🟡️ 🟡️ 🟡️ LEVELS of AUTHENTICATION 🟡️ 🟡️ 🟡️
+ 
+ 👉️ system-level authentication :
+ 	👁️‍🗨️️ accessrules.
+ 	After we’ve implemented AccessRules to our component, the Radix Engine can use the Proofs in the Authorization Zone 
+ 	and compare it against the badges specified in the component’s AccessRules.
+ 
+	  ▶️ The Authorization Zone (AuthZone) :
+	 	🏅️ Every transaction on the Radix Network contains a layer called the Authorization Zone or AuthZone.
+	 	🏅️ All Proofs are submitted in the AuthZone.
+	 	🏅️ Transactions submitted to the Radix Network are accompanied by the 👁️‍🗨️️transaction manifest.
+	 	
+ 👉️ Application-level Authentication :
+ 	▶️ Passing Proofs by Intent:
+ 		While every Proof is automatically sent to the AuthZone, we are not confined to authenticating Proofs in 
+ 		the AuthZone.   
+ 		Instead, we can send Proofs directly to our component method(s) [👁️‍🗨️️ as an argument] to perform our own authentications. 
+ 		This way of applying application-level authentication is called Passing Proofs by Intent.
+ 	▶️ ProofValidation: 
+ 		When we pass a Proof directly to our component method(s), authentications are handled by ProofValidation
+ 	
+ 							🟡️ 🟡️ 🟡️ The .authorize() Method Expanded 🟡️ 🟡️ 🟡️
+ 	
+ 👉️ It’s worth noting the sequence of events of what .authorize() does under the hood. 
+ 	When .authorize() is called on a Vault or a Bucket(rarely) : 
+
+		▶️ The method creates a Proof of the resource contained within the Vault or Bucket.
+
+		▶️ The Proof is then pushed to the AuthZone
+
+		▶️ It performs the specified sequences of logic within the enclosure of its argument.
+
+		▶️ The Proof is popped from the AuthZone
+
+		▶️ The Proof is then dropped.
+
+		It does all these steps sequentially and automatically.
+		
+	------------------------------------------------------------------
+
+resource behaviour : authorize()
+methods : pass proof during method-call
+			e.g resim call-method [component_address] [method_to_call] --proofs 1,[resource_address of admin_badge]
+ 	

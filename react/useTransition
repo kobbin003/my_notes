@@ -1,0 +1,11 @@
+useTransition:
+
+🔗️ https://blog.webdevsimplified.com/2022-04/use-transition/
+
+it is used to specify that a "state update" i.e setState(value) is not "urgent"
+
+
+
+🔗️ https://react.dev/reference/react/useTransition#usage
+
+ " a slow re-render freezed the user interface "

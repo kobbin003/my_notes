@@ -1,0 +1,25 @@
+⭐️ Arrays are an special type of object in javascript. ----------------------------------------------------
+
+Hence we can iterate over arrays;
+i.e:
+const arr = [1, 2, 3];
+for(i of arr){
+	console.log(i)
+}
+//output:  1 2 3
+
+
+⭐️ Array.keys()		----------------------------------------------------
+
+const array = [...some array];
+
+array.keys() returns an 👁️‍🗨️️object iterator👁️‍🗨️️.
+
+👉️we can either 
+
+	▶️ for..of loop over it
+
+	OR
+
+	▶️ convert it to Array and map;
+	ie. Array.from(array.keys()).map(x=>{// code..})

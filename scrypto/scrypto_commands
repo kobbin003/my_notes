@@ -1,0 +1,75 @@
+The resim command allows you to communicate with the local simulator to manage accounts, 
+publish packages, run transactions and much more!
+
+	👉️ -------------------------------------- < resim [command] > ------------------------------------------------
+
+commands:
+
+publish . -> build and deploy the package
+new-account -> create a new account
+show-configs -> show the current default account.
+transfer [amount] [resource_address] [recipient_address] -> transfers "amount" of "resource_address" to "recipient_address"
+
+
+call-function [package-address] [blueprint-name] [function-name] -> calls a function of the package;
+								    Returns address of component created and it's resources.
+call-method [component-address] [method-name] -> calls a method of the component(which is an instance of a package/blueprint);
+								    Returns address of component created and it's resources
+								    
+	👉️ ------------------------------------- scrypto types -------------------------------------------------------
+
+Decimal & ParseDecimal
+PackageAddress --> A package is a bundle of components and resources that can be deployed together as a single unit.
+		    The packageAddress is used to deploy the package as a whole and interact with its components and 
+		    resources.
+ComponentAddress --> A component is a logical entity that can be deployed and executed within the RDL. Components can 
+		     include smart contracts, state machines, or other types of software. 
+		     The componentAddress is used to interact with the component, such as deploying it or 
+		     executing its functions.
+ResourceAddress  -->Resources can be any type of data that is stored on the ledger, such as user data, transaction data, 
+		    or other types of metadata. 
+		    The resourceAddress is used to read or modify the resource.
+		   
+Vault, Bucket;
+
+scrypto new-package [package-name] -> creates a new package; Returns packageAddress.
+
+   👉️ -------------------------------------- RESOURCES ---------------------------------------------------
+Scrypto offers a handful of utilities to conveniently create and manage resources. 
+
+ 🛑️💨️ ResourceBuilder - The ResourceBuilder is used to create Fungible and NonFungible resources.
+
+ 🛑️💨️ ResourceManager - When a resource is created, a ResourceManager is also created to manage the resource.
+
+🗯️⭐️  R E S O U R C E - B U I L D E R ⭐️
+
+💬️👁️‍🗨️️ "METHODS" by resourcebuilder for " FUNGIBLE " resources:
+- divisibility(number | DIVISIBILITY_MAXIMUM | DIVISIBILITY_NONE)
+- metadata(key , value)
+- mint_initial_supply(number)
+- create_with_no_initial_supply()
+
+💬️👁️‍🗨️️ "METHODS" by resourcebuilder for " NON-FUNGIBLE " resources:
+- .metadata(key, value)
+- .mint_initial_supply(vector_of_tuples)
+- .create_with_no_initial_supply()
+- .mintable(action_rule, mutability_rule) 
+- .burnable(action_rule, mutability_rule) 
+- .updateable_non_fungible_data(action_rule, mutability_rule)
+ 
+ 🛑️ NonFungible resources have NonFungibleData that we can define the way we like. 
+ This data structure is a custom struct where we can specify its fields and value.
+ 🛑️ Mutability of NON-FUNGIBLE data:- 
+ Use mutable macro above the field that you want to keep mutable e.g
+#[derive(ScryptoSbor, NonFungibleData)]
+pub struct MagicCard {
+    color: Color,
+    rarity: Rarity,
+    #[mutable]
+    level: u8,
+}
+ 🛑️ When we create a NonFungible resource, the collection of the NonFungible resource will have one ResourceAddress. 
+However, each individual NonFungible that we decide to mint will have its own unique identifiers called 
+"NonFungibleLocalId"
+
+

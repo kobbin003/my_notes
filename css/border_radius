@@ -1,0 +1,10 @@
+button-radius cheatsheet:
+
+border-radius: 50%; - Perfect circle (50% of the element's width and height).
+
+border-radius: 5px; - Rounded corners with a fixed radius of 5 pixels.
+
+border-radius: 50% 10px / 20px; - Elliptical shape with a horizontal radius of 50% and a vertical radius of 10 pixels, 
+								  with a corner curve size of 20 pixels.
+
+border-radius: {a_very_high_value}px; - capsule shaped.
