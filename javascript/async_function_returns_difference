@@ -1,0 +1,7 @@
+difference between: async function exampleAsyncFunction() {
+  return;
+} and  async function exampleAsyncFunction() {
+  return Promise.resolve();
+}
+
+⚡️ refer: ExtractXZ method in archive_manager/server

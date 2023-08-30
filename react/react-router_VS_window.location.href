@@ -1,0 +1,13 @@
+<Link /> or navigate v/s window.location.href :
+
+using "window.location.href" triggers a full page reload, 
+similar to clicking a link or entering a new URL in the browser's address bar. 
+This approach is not specific to React or client-side routing; 
+it's a browser-level operation that affects the entire page and its context.
+
+using 'react-router-dom' It provides a declarative way to navigate between 
+different routes without triggering a full page reload. 
+When you use the Link component, it updates the browser's history and the application's state, 
+allowing you to navigate back and forth without losing the application's context.
+
+⭐️ So, use <Link/> or navigate for navigation if you have to maintain state.

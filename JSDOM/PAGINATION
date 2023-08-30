@@ -1,0 +1,18 @@
+PAGINATION:
+
+ terms to know:
+ 	🪧️ window.scrollY - distance scrolled vertically.
+ 	🪧️ window.innerHeight - height of the viewport.
+ 	🪧️ window.document.documentElement - It refers to the refers to the root element of the HTML document. 
+ 										 It represents the <html> element in an HTML page and 
+ 										 serves as the parent node for all other elements in the document. 
+ 	🪧️ window.document.documentElement.scrollHeight - total height of the entire HTML document, 
+ 													  including the parts that are not currently visible in the viewport,
+ 													  but is scrollable.
+ 													  
+ 	🪧️ window.scrollTo(x-coordinate, y-coordinate)
+ 													  
+ 
+ USE:-
+  - useRef(): to remember the scrollPosition of previously rendered page, after a re-render. 
+  - scroll event

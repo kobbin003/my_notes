@@ -1,0 +1,17 @@
+for...in loop:
+
+⭐️ if there are no key-value pairs (properties) inside the object, the for...in loop won't run. 
+   The loop iterates over the existing properties of the object, and if there are no properties, 
+   there's nothing to iterate through.
+   
+   Hence: function isEmpty(obj) {
+   				for (let el in obj) return false;
+   				return true
+   			}
+   		
+   		console.log(isEmpty({})) // true
+   		
+⭐️ for(x in obj) vs for (let x in obj):
+	In this version, if you don't explicitly declare x using var, let, or const before the loop, 
+	the variable "x" will be created in the global scope. This might lead to unintended behavior, 
+	especially if there's already a global variable named "x".

@@ -1,0 +1,18 @@
+web-worker:
+
+1. create the instance of worker:
+	const counter: Worker = useMemo(
+		() => new Worker(new URL("./longProcesses/count.ts", import.meta.url)),
+		[]
+	);
+	
+	
+2. Communicate with the worker i.e count.ts:
+
+	self.onmessage = (e: MessageEvent<string>) => {
+	console.log("message received", e.data);
+	};
+	
+	👉️ worker methods = postMessage, onMessage, onerror, terminate etc..
+	  
+	👉️ cross communication can be done between worker and it's instance through those methods

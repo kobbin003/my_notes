@@ -1,0 +1,6 @@
+how to use "require" in ES "module" scope:
+
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+const x = require("lib")

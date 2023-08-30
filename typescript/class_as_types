@@ -1,0 +1,19 @@
+class as type 
+
+When you use a class as a type, you are referring to the shape and structure of the class, 
+including its methods and properties. 
+However, it's important to note that a class type is a structural type, 
+meaning it only checks that the structure of an object matches the class definition, 
+rather than checking if an object is an instance of a specific class.
+
+e.g:
+class Person {
+  constructor(public name: string, public age: number) {}
+}
+
+// Using the class as a type
+let person: Person;
+
+person = new Person("Alice", 30); // Valid because the object matches the class structure
+person = { name: "Bob", age: 25 }; // Also valid, even though it's not an instance of Person
+

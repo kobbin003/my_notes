@@ -1,0 +1,30 @@
+In CSS, both : (single colon) and :: (double colon) are used in selectors, 
+but they have different meanings and use cases:
+
+1. Single Colon (:):
+
+The single colon : is used in regular pseudo-classes. 
+Pseudo-classes are used to style elements based on their state. 
+
+For example, :hover, :active, :focus are common pseudo-classes used to apply styles 
+when an element is being hovered over, active, or focused, respectively.
+Example: a:hover, input:focus, button:active
+
+2. Double Colon (::):
+
+The double colon :: is used for pseudo-elements. 
+Pseudo-elements allow you to style a part of an element, 
+such as the first line of a paragraph or the first letter of a heading, without adding additional markup to the HTML.
+
+Example: ::before, ::after, ::first-line, ::first-letter
+In modern CSS, both single and double colons are used interchangeably for pseudo-elements. 
+However, the W3C recommends using double colons for pseudo-elements to distinguish them from pseudo-classes. 
+
+
+
+
+
+
+
+
+

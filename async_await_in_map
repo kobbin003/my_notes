@@ -1,0 +1,6 @@
+AWAIT IN map FUNCTION :
+
+To use await inside an Array.map() function, you cannot directly use it because 
+Array.map() does not support asynchronous operations. 
+
+Instead use for..of loop

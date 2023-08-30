@@ -1,0 +1,12 @@
+ The __dirname variable is only available in CommonJS modules (i.e., files executed by Node.js directly).
+
+If you are using __dirname in an ECMAScript module (ESM) context, __dirname won't be available. 
+Instead, you can use the import.meta.url property in an ESM context to get 
+the current script's URL, and then extract the directory path from it.
+
+this:
+const __filename = (new URL(import.meta.url)).pathname;
+const __dirname = path.dirname(__filename);
+
+we use import.meta.url to get the current script's URL and then convert it to a local file path 
+using URL and pathname. Finally, we use path.dirname() to get the directory name of the current script, 

@@ -1,0 +1,14 @@
+accept directory in file-type-input
+
+// step 1: extend React's HTMLAttributes
+declare module "react" {
+	interface InputHTMLAttributes<T> extends HTMLAttributes<T> {
+		directory?: string;
+		webkitdirectory?: string;
+		mozdirectory?: string;
+	}
+}
+
+// step 2: then you can these attributes on your input.
+// keep the value as empty string.
+<input type="file" directory="" webkitdirectory="" mozdirectory="" />

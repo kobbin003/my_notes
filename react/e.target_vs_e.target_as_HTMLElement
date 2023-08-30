@@ -1,0 +1,31 @@
+
+----------------------- e.target v/s e.target as HTMLElement ----------------------------
+
+const handleOnChange = (e: ChangeEvent<HTMLSelectElement>) => {
+
+	/* case 1: selectEl as HTMLELEMENT */
+	
+	const selectEl = e.currentTarget as HTMLElement;
+	
+	console.log(selectEl.value); // " Property 'value' does not exist on type 'HTMLElement' "
+	
+	/* case 2: selectEl */
+	
+	const selectEl = e.currentTarget as HTMLElement;
+	
+	console.log(selectEl.value); // logs the value [since value is a property of EventTarget (read below)]
+};
+
+case 1:
+- TypeScript will treat selectEl as if it were an HTMLElement, regardless of the actual type of e.currentTarget.
+
+- This can be helpful when you know for certain that e.currentTarget is of type HTMLElement and you want 
+  to "access properties or methods specific to HTMLElement".
+
+case 2:
+
+- The inferred type of selectEl will be the exact type of e.currentTarget at that moment.
+
+-	If e.currentTarget is of type EventTarget (which is the base type for all DOM event targets), 
+	then the type of selectEl will be EventTarget. This means you can only "access properties and 
+	methods that are common to all event targets".

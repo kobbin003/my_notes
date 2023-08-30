@@ -18,7 +18,7 @@ git log --remotes --> prints all the commits that was pushed.
 git reset --hard HEAD ---> revert to last commit.
 	- removes & deletes files in the staging area added after the last commit.
 	- git clean -fd ---> delete any new files that were added since the last commit.
-git reset   --> simply removes all the files in the "staged area" without deleting it. ["staged area" = git add ]
+git reset   --> simply removes all the files in the "staged area" without deleting it. ["staged area"= (git add); equivalent to git restore all]
 git reset <commitID> ---> reverts to the specified commit.("unstages" all files after that commit)
 git restore --staged <file_path/file_name>  --> removes the specific file from the "staged area".
 git restore <file_path> --> undos the modification in the unstaged file.

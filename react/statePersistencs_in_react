@@ -1,0 +1,14 @@
+why does the useState state persists when i save my react code?
+[ in spotify clone <Home/> ]
+
+In React, the state of a component is intended to be local and persistent within the component's scope. 
+This means that when you update the state using useState, the state changes are retained as long as the component 
+is not unmounted or the state is not explicitly reset.
+
+React's state management preserves the state of each component as long as the component remains mounted.
+
+When you save your React code and then refresh the page, the component tree is re-rendered and the components 
+are re-created. However, React's state management preserves the state of each component as long as the component 
+remains mounted. This is why you might see the state values persisting even after a refresh.
+
+

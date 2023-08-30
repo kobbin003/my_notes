@@ -1,0 +1,90 @@
+ 👉️ 👉️ 👉️ chunk & stream's:
+
+When uploading files, the browser will split the data into little 🗯️“chunks” 
+and send them through the connection, one chunk at a time. 
+This is necessary because files can be too large to send in as one massive payload.
+
+Chunks of data being sent over time make up what’s called a 🗯️“stream”. 
+Basically, a stream is sort of like a conveyor belt of data, where each chunk can be processed as it comes in. 
+In terms of an HTTP request, the backend will receive parts of the request, one bit at a time.
+
+Node.js provides us with an event handler API through the request object’s(i.e req) 🗯️"on" method,
+ which allows us to listen to 🗯️“data” events as they are streamed into the backend.🏅️
+ 
+ 👉️ 👉️ 👉️ STREAMs:
+ 
+ a stream is a sequence of data that is made available piece by piece, rather than being loaded into memory 
+ all at once. Streams are used to efficiently handle large amounts of data or data that is being generated or 
+ consumed in a continuous and real-time manner. 
+ * streams are a powerful abstraction for dealing with data in a continuous, efficient, and non-blocking manner.
+ 
+ Streams can be classified into two main types:
+
+	1. Readable Stream:
+
+	- A readable stream is a source of data from which data can be read sequentially.
+	- It produces data that can be consumed by other parts of the program.
+	- Examples of readable streams include reading data from a file, receiving data over a network socket, 
+	  or reading data from a database query result.
+	
+	2. Writable Stream:
+
+	- A writable stream is a destination for data that can be written sequentially.
+	- It consumes data and stores or sends it elsewhere.
+	- Examples of writable streams include writing data to a file, sending data over a network socket, 
+	  or writing data to a database.
+ 
+ 👉️ 👉️ 👉️ HOW TO WRITE THE STREAMED DATA INTO A FILE IN THE SERVER :
+ 
+ createWriteStream: creates a writable stream which used to write data into a file(path).
+ < const writableStream = fs.createWriteStream(path[, options]) >
+ 
+ we can either:
+ 1. // Write data to the stream
+	writableStream.write('Hello, ');
+	writableStream.write('World!\n');
+	writableStream.end(); 
+
+2. pipe the writableStream to a readableStream:
+	req.pipe(writableStream); 
+	[req is the request stream; It will write the streamed data into the file(path)]
+	
+ 👉️ 👉️ 👉️ THERE ARE TWO WAYS TO CREATE FILES FROM STREAMED DATA : 
+
+🪧️* WAY - 1 [ creates file from data ] ---- ( USING "on" method )
+	let chunks = [];
+	req.on("data", (data) => {
+		console.log("data", data);
+		chunks.push(data);
+	});
+	req.on("end", () => {
+		const payload = Buffer.concat(chunks);
+		console.log("payload", payload);
+		fs.writeFileSync("frombufferrar.rar", payload);
+	});
+
+🪧️* WAY - 2 [ creates file from stream ] ---- ( USING "createWriteStream" method )
+	const fileStream = fs.createWriteStream("output.rar", { encoding: "binary" });
+	req.pipe(fileStream);
+
+ 👉️ 👉️ 👉️ WRITESTEAM "ON" METHOD :
+ 
+🪧️* The writeStream.on() method is used to attach event handlers to a WriteStream instance. 
+ This allows you to listen for various events that occur during the writing process.
+ 
+🪧️* writeStream.on(event, listener): 
+
+ ⚱️ event: A string specifying the event name. The common events for WriteStream are:
+
+	'close': Emitted when the stream and any underlying resources (like file descriptors) have been closed.
+	'error': Emitted if there's an error during writing.
+	'finish': Emitted when all data has been flushed to the underlying system.
+
+ ⚱️ listener: The callback function to be executed when the specified event is emitted. This function may take arguments specific to the event.
+ 
+ 
+ 
+ 
+ 
+ 
+

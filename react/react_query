@@ -1,0 +1,29 @@
+👉️ Wrap your app with queryclient provider : 
+
+	const queryClient = new QueryClient();
+
+	<QueryClientProvider client={queryClient}>
+		<App />
+	<QueryClientProvider />
+		
+
+👉️ TWO WAYS TO SET "TYPE" FOR DATA AND ERROR OF USEQUERY:
+
+	1. in the useQuery (By providing the generic parameter to useQuery) :
+	const queryFunction = async () => {} 
+
+	const { isLoading, isError, data, error } = useQuery<DATA_type, ERROR_type>({
+			queryKey: ["singlePhoto"],
+			queryFn: queryFunction,
+		});
+
+	2. in the queryFn :
+	const queryFunction = async (): Promise<DATA_Type> => {} 
+
+	const { isLoading, isError, data, error } = useQuery({
+			queryKey: ["singlePhoto"],
+			queryFn: queryFunction,
+		});
+	
+	POINTER: way-2 is only for providing the data type. 
+			 USE way-1 for both data type nd error type.

@@ -25,3 +25,14 @@
 	"undefined"
 	"object"
 	"function"
+	
+👉️ used in type-checking:
+	typeof
+	instanceof
+	in
+	keyof
+	as (assertion)
+	user-defined typeguards
+	
+	
+

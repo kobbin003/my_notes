@@ -1,0 +1,27 @@
+declare global:
+
+In TypeScript, the declare global statement is used to augment or extend the global scope, 
+allowing you to add custom types, interfaces, or properties to the global namespace. 
+It's often used to declare types for libraries, APIs, or variables that are defined outside of TypeScript modules.
+
+e.g:
+1. in the spotify webPlayback API:
+
+declare global {
+	interface Window {
+		onSpotifyWebPlaybackSDKReady: (() => void) | undefined;
+		Spotify: {
+			Player: new (options: Spotify.PlayerInit) => Spotify.Player;
+		};
+	}
+}
+
+2. in file type input (to accept folder):
+
+declare module 'react' {
+	interface InputHTMLAttributes<T> extends HTMLAttributes<T> {
+	  // extends React's HTMLAttributes
+	  directory?: string;
+	  webkitdirectory?: string;
+	}
+  }

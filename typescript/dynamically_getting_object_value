@@ -1,0 +1,17 @@
+Dynamically getting the property value of an object (Typescript) :
+
+when trying to access a property of an object using a dynamic string key,
+TypeScript cannot ensure that the property actually exists on the object. 
+This can lead to runtime errors if the property is not present, 
+so TypeScript requires you to explicitly declare the type of the property when you use a dynamic string key to access it.
+
+So, to get the value:
+you can either:
+
+ 👉️	Way 1 -
+	(obj as any)[keyValue]
+	
+ 👉️	Way 2 -
+	type ValidKeys = "key1" | "key2" | "key3" .....
+	const keyValue: ValidKeys = someValue 
+	const value = obj[keyValue as ValidKeys]

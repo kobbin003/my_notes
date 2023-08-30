@@ -1,0 +1,9 @@
+USING FETCHHOOK IN A COMPONENT:
+(SO AS TO TRIGGER REFETCH DATA ON COMPONENT RERENDER)
+
+The data fetched by the "useEffect hook" inside the "fetchhook" is only updated 
+once when the component is "initially rendered", and "subsequent re-renders" of the component
+will trigger a re-fetch of the data "only if" the dependency of the useEffect changes.
+
+Therefore "re-rendering" a component will trigger the fetchhook to "re-fetch data" only if 
+there is change in the dependency.
