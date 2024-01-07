@@ -1,0 +1,123 @@
+													
+													PASSPORTJS:
+
+⭐️ required libraries that passportjs works in conjuction with :
+	- express-session
+	- express-flash
+ 
+⭐️ Three methods(for initializing passport):
+	1. passport.use
+	2. passport.serialize
+	3. passport.deserialize
+
+1️⃣️. passport.use
+	⚡️ syntax: passport.use(new <Strategy_type>(optoins ,authenticate))
+	⚡️ example:
+		passport.use(
+				new LocalStrategy(
+					{
+						usernameField: "email",    //🗒️ Specifies the field name(in the HTML form) for the username (default is 'username')
+						passwordField: "password", //🗒️ Specifies the field name(in the HTML form) for the password (default is 'password')
+					},
+					authenticate:(email,password,done)=>done()
+				)
+			);
+
+		🪧️ authenticate:   this is where you find the user with it's credentials like email & password,
+							and if found, return the done function with the found-user as it's second argument.
+			
+		🪧️ done() can be called with three arguments:
+					1- null
+					2- foundUser or false, if user not found
+					3- error-message, if user not found
+
+2️⃣️. passport.serialize((user,done) => done())
+	This function is used to determine what data from the user object should be stored in the session. 
+	Its primary purpose is to take a user object as an argument and serialize it into a format that can 
+	be stored in the session. 
+	
+3️⃣️. passport.deserialize((user,done) => done())
+	 It takes the data stored in the session (in this case, the id serialized earlier) and uses it to retrieve 
+	 the user object from your database or wherever your user data is stored.
+
+⭐️ Initialization:
+	app.use(passport.initialize());
+	app.use(passport.session());
+	//🗒️ Initialize Passport and configure it to use sessions
+	
+	app.use(flash()) //🗒️ passport use express-flash to flash error messages.
+	app.use(
+		session({
+			secret: process.env.SESSION_SECRET,
+			resave: false,
+			saveUninitialized: false,
+		})
+	);  //🗒️ passport relies on express-session to store and retrieve session data.
+
+⭐️ Implementation:
+
+	we use it as "middleware":
+
+	⚡️ syntax: app.<method>("/<route>", passport.authenticate(<strategy>,options), (req, res) => {});
+
+	⚡️example: 
+		app.post(
+			"/login",
+			passport.authenticate("local", {
+				successRedirect: "/user",  // redirect route on success
+				failureRedirect: "/login", // redirect route on failure
+				failureFlash: true,  // flashes any error message(messages set in the authenticate function, on failure)
+			}),
+			(req,res)=>{ /* if you want to send any stuff*/ }
+		);
+
+----------------------------------------------------------------------------------------------------
+
+[❌️][❌️][❌️][❌️][❌️]
+	this is not how you do with passportjs.
+	- you dont have to send anything like token, code etc to the front
+		[although needed, if you want to send the user profile ]
+	- passportjs' req.isAuthenticated() method is enough to authenticate user.
+[❌️][❌️][❌️][❌️][❌️][❌️]
+
+⭐️ In case of sending json: 
+
+1️⃣️	/** errorHandler middleware will handle the error */
+	app.post(
+		"/login",
+		passport.authenticate("local", {
+			failWithError: true,
+		}),
+		(res, req) => {
+		/* 🗒️ This callback runs only when authentication is successful*/
+			res.json({ success: true, message: "Authentication succeeded" });
+		}
+	);
+
+2️⃣️	For full control on sent json on failure:
+
+	app.post("/login", (req, res, next) => {
+		passport.authenticate("local", (err, user, info) => {
+			if (err) {
+				return next(err); // Handle any errors that occurred during authentication
+			}
+			if (!user) {
+				// Authentication failed, send a JSON response with a failure message
+				return res
+					.status(401)
+					.json({ success: false, message: "Authentication failed" });
+			}
+
+			return res.json({ success: true, message: "Authentication succeeded" });
+		})(req, res, next);
+	});
+
+		✨️ passport.authenticate middleware is immediately invoked with app.post's callbackfunction's 
+		   req,res and next as the arguments values */
+
+		🗒️	err: null
+			user: the found user OR ELSE null.
+			info: the message set in done() OR ELSE undefined.
+
+----------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,46 @@
+REACT_NATIVE:
+
+⚡️ GETTING STARTED:
+There are two ways:
+👉️ 1️⃣️ connect to your own mobile device, using QR code.
+	[ 🔗️ https://reactnative.dev/docs/environment-setup?guide=quickstart ]
+	
+	< npx create-expo-app project_name >
+	< cd AwesomeProject >
+
+	< npx expo start >
+ 
+ 
+👉️ 2️⃣️ Use a simulator(android or ios):
+	- follow the steps in this link:
+	[ 🔗️ https://reactnative.dev/docs/environment-setup?guide=native ]
+
+⚡️ android studio:
+
+- download & install android studio
+- install JRC & JDK [ https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-22-04 ]
+
+
+npx expo install react-native-web@~0.19.6 react-dom@18.2.0 @expo/webpack-config@^19.0.0
+
+
+⚡️ PREFERENCE of project creation (for simulator; but for device, ofcourse you have to use expo one): 
+🧑‍💻️ < npx react-native@latest init AwesomeProject > over 🧑‍💻️ < npx create-expo-app AwesomeProject >
+
+⚡️ DEVTOOLS:
+- react native debugger: 🔗️ http://localhost:8081/debugger-ui/
+- install react-devtools: 🧑‍💻️ npm i react-devtools --save-dev
+- launch react-devtools: 🧑‍💻️ npx react-devtools
+
+⚡️ TOOLS used:
+	1️⃣️ react-navigation
+		- react-native-screens
+		- react-native-safe-area-context
+		- npm install @react-navigation/native-stack
+	
+	
+	
+	
+	
+	
+

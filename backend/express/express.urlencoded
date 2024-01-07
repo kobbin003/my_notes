@@ -1,0 +1,29 @@
+form submitted data:
+name=John
+contact.email=john@example.com
+contact.phone=123-456-7890
+colors[]=red
+colors[]=blue
+colors[]=green
+
+if( app.use(express.urlencoded({ extended: false })) ),
+then:
+{
+  name: 'John',
+  contact: {
+    email: 'john@example.com',
+    phone: '123-456-7890'
+  },
+  colors: ['red', 'blue', 'green']
+}
+
+
+if( app.use(express.urlencoded({ extended: true })) ),
+then: 
+{
+  name: 'John',
+  'contact.email': 'john@example.com',
+  'contact.phone': '123-456-7890',
+  'colors[]': ['red', 'blue', 'green']
+}
+

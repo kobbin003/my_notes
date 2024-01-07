@@ -1,0 +1,22 @@
+# creating a HTTP server
+
+- `sudo su`  : to become the root user.
+- apt update : update the package manager apt
+- apt install apache2 : install apache2 package
+*server will be served at **External IP**, which you can find it in the console*
+
+### other commands used:
+- echo $(hostname) : the vm instance name
+- echo $(hostname -i) : the ip of the vm instance a.k.a **Internal IP**
+
+
+## Internal IP vs External IP:
+- **External IP :** This IP address allows the VM to communicate with resources on the public internet, making the VM accessible from outside the GCP network. This address is from where th public can access the VM instances.  
+these are of two types:  
+	1.Ephemereal: changes if you stop and start the VM.  
+	2.Static: does not change if you stop and start the VM.  
+			Used for hosting web services or applications. 
+- **Internal IP :** Internal IP addresses are used for communication within the GCP network. Each VM instance within the same Virtual Private Cloud (VPC) network is assigned a unique internal IP address, which is used for internal communication. These internal IPs are not directly accessible from the public internet, providing an additional layer of security for internal resources. 
+
+-- All VM instances are assigned atleast one Internal IP.  
+-- External IP can be enabled/disabled.

@@ -1,0 +1,16 @@
+# Compute Engine
+ ### To deploy an app on virtual server, we need:
+ - Virtual Machines(VM): virtual servers in GCP
+ - Google Compute Engine(GCE): provision & manage VMs
+ 
+## Google Compute Engine(GCE):
+### Features:
+- create and manage lifecycles of VM instances.
+- **Load balancing** and **autoscaling** of *multiple* VM instances.
+**loadbalancing**: distribute the load between the VM instances.  
+**autoscaling**: increase the number of VM instances based on the load.
+- *attach storage*(& network storage) to your VM instance.
+- manage netwokr connectivity and configuration for your VM instances. like assigning ip address to your VM instance etc.
+
+### machine types:
+- memory, disk and networking capabilities increase along with vCPUs.

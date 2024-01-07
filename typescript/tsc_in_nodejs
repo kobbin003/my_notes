@@ -1,15 +1,4 @@
-
-https://blog.logrocket.com/how-to-set-up-node-typescript-express/
-
-
-npm i -D typescript @types/express @types/node
-
-npx tsc --init --> generates tsconfig.json file
-* unmute the outDir in the tsconfig.json file
-* create a tsc file if some unkown error shows up in tsconfig.json file
-
-
-ALTERNATIVELY you can use:
+LIBs you can use:
 - tsc-node
 - deno
 etc...
@@ -33,7 +22,29 @@ script: {
 run the resulting JavaScript code. Nodemon itself doesn't have built-in TypeScript support, so you need 
 to use a TypeScript runner like "ts-node" or "ts-node-dev" in conjunction with "Nodemon" to achieve this.
 
-----------------------------------------------------------------------------------
-without packages:
+------------------------------ without packages:[ ⭐️ recommended ⭐️ ] -------------------------------------------------
+
+- installation: npm i -D typescript @types/express @types/node
+- create a tsconfig.json: 
+	npx tsc --init
+	or
+	manually create it:
+	{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "sourceMap": true,
+        "outDir": "dist"
+    },
+    "include": ["src/**/*"]
+	}
+
+- create src folder. this is where your ts files will be
+- npx tsc -w: this will build the ts files in "src" folder into js file into the "dist" folder.
+  [according to tsconfig.json]
+- node dist/index.js [run the js file that has been built from the ts file]
+
+
 
 

@@ -1,0 +1,11 @@
+# Docker
+- docker Image/ container image (Build)
+- docker Registry (Ship)
+- docker Container (Run	)
+
+Build > Ship > run
+
+### 3 major ways to run containers:
+1. locally (Docker desktop, RD)
+2. Servers (Docker Engine, k8s)
+3. PaaS (Cloud Run, Fargate)

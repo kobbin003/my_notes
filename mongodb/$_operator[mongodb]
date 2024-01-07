@@ -1,0 +1,70 @@
+											
+											$ operator
+											
+In MongoDB, the `$` symbol is commonly used as an operator to perform various operations within queries. 
+Here are some of the commonly used `$` operators:
+
+1. **Comparison Operators:**
+   - `$eq`: Matches values that are equal to a specified value.
+   - `$ne`: Matches values that are not equal to a specified value.
+   - `$gt`: Matches values that are greater than a specified value.
+   - `$gte`: Matches values that are greater than or equal to a specified value.
+   - `$lt`: Matches values that are less than a specified value.
+   - `$lte`: Matches values that are less than or equal to a specified value.
+   - `$in`: Matches any of the values specified in an array.
+   - `$nin`: Matches none of the values specified in an array.
+
+   Example:
+   
+   db.collection.find({ age: { $gte: 18, $lte: 30 } });
+   //i.e age > 18 && age <= 30
+
+2. **Logical Operators:**
+   - `$and`: Joins query clauses with a logical AND.
+   - `$or`: Joins query clauses with a logical OR.
+   - `$not`: Inverts the effect of a query expression.
+   - `$nor`: Joins query clauses with a logical NOR.
+
+   Example:
+   ```javascript
+   db.collection.find({ $or: [{ age: { $lt: 18 } }, { isStudent: true }] });
+   ```
+
+3. **Element Operators:**
+   - `$exists`: Matches documents that have the specified field.
+   - `$type`: Selects documents if a field is of the specified type.
+
+   Example:
+   ```javascript
+   db.collection.find({ field: { $exists: true } });
+   ```
+
+4. **Array Operators:**
+   - `$all`: Matches arrays that contain all elements specified in the query.
+   - `$in`: Matches arrays that contain any of elements specified in the query.
+   - `$elemMatch`: Matches documents that contain an array field with at least one element matching the specified criteria.
+
+   Example:
+   ```javascript
+   db.collection.find({ tags: { $all: ["mongodb", "database"] } });
+   ```// find doc where the tags(an array) has both the strings "mongodb" and "database"
+   
+   db.collection.find({ tags: { $in: ["mongodb", "database"] } });
+   ```// find doc where the tags(an array) has either "mongodb" or "database"
+
+5. **Update Operators:**
+   - `$set`: Sets the value of a field in a document.
+   - `$unset`: Removes the specified field from a document.
+   - `$inc`: Increments the value of the field by the specified amount.
+   - `$push`: Adds an element to an array.
+   - `$pull`: Removes all array elements that match a specified query.
+   - `$addToSet`: Adds elements to an array only if they do not already exist.
+   - `$pop`: Removes the first or last element of an array.
+
+   Example:
+   ```javascript
+   db.collection.update({ _id: 1 }, { $set: { status: "active" } });
+   ```
+
+These are just a few examples, and there are more `$` operators available in MongoDB. 
+The choice of operator depends on the specific query or update operation you want to perform.

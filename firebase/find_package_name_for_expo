@@ -1,0 +1,39 @@
+HOW TO FIND PACKAGE NAME FOR EXPO APP:
+
+Here's how you can find the package name for your Expo app:
+
+Expo app.json File:
+In your React Native Expo project, you should have an app.json file at the root of your project directory. 
+Open this file in a text editor.
+
+Locate the slug Field:
+In the app.json file, you will find a field called "slug". This field specifies the URL-safe project name and 
+is used as the basis for generating the package name.
+
+Example:-
+
+app.json
+Copy code
+"slug": "my-expo-app",
+Derive the Package Name:
+The package name for your Android app is typically derived from the slug field in the following format: 
+	host.exp.exponent + slug.
+
+So, if your slug is "my-expo-app", the package name for your Android app would be host.exp.exponent.myexpoapp.
+
+Example:-
+
+app.json
+Copy code
+"android": {
+  "package": "host.exp.exponent.myexpoapp"
+}
+
+This package name is used when registering your app in the Firebase Console and when configuring other 
+Android-related settings.
+
+Remember that the package name is case-sensitive, so make sure it matches the value you provide when registering 
+your app in Firebase or when configuring other services.
+
+
+

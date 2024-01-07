@@ -1,0 +1,13 @@
+FIREBASE:
+
+1. create project on firebase console.
+
+2. Connect the firebase project with you app.
+ 
+	There are two different ways you can use Firebase in your projects [ FOR REACT NATIVE ]:
+
+	- Using Firebase JS SDK [ works with expo go ]
+		🔗️ https://docs.expo.dev/guides/using-firebase/#using-firebase-js-sdk
+		
+	- Using React Native Firebase [ works with react-native cli ]
+		🔗️ https://docs.expo.dev/guides/using-firebase/#using-react-native-firebase

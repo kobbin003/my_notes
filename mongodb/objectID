@@ -1,0 +1,7 @@
+new mongoose.Schema.Types.ObjectId() vs new mongoose.Types.ObjectId()
+
+how to get id from them:
+
+former: .path
+
+latter: .toString()

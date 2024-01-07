@@ -1,0 +1,19 @@
+building image:
+
+command: docker image build [options] PATH | URL
+
+		e.g: docker image build -t customnginx .
+		This will create an image named "customnginx" from the dockerfile present in the current directory(.)
+		
+If you make any change in the dockerfile and build
+
+
+✴️ ✴️ ✴️ pointers: ✴️ ✴️ ✴️
+
+👉️ lines which are susceptible for more change should be written lower in the dockerfile.
+
+👉️ && v/s ;
+
+	RUN command1 && command2 v/s RUN commands1; command2
+	in first case, command2 runs only if command1 is successfully run.
+	in second case, command2 runs after command1 regardless of its success/failure.

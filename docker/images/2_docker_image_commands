@@ -1,0 +1,16 @@
+Image_commands:
+
+1. docker image history ${image_name}
+	: shows all the layers that an image is made of.
+	⭐️ Each layer are uniquely identified and stored only once in a host
+	⭐️ This saves storage on the host as well as transfer time on push/pull.
+
+🗒️⭐️ A container is just a read/write layer on top of image.
+
+2. docker image inspect ${image_name}
+	: shows all the details of an image
+	  It basically is all the "metadatas" of an image.
+	  
+3. docker image tag ${source_image} ${target_image}
+	e.g: docker image tag nginx kob009/nginx
+	: creates a new image from the source_image with ${target_image} as it's name.

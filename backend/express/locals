@@ -1,0 +1,16 @@
+⚡️ res.locals (Response Local Variables):
+
+res.locals is specific to a single request-response cycle.
+
+It is an object that allows you to store data that is scoped to the current HTTP request and response pair.
+
+You typically use res.locals within a specific route handler to pass data from the server to a view template 
+that will be rendered for that particular request.
+
+⚡️ app.locals (Application Local Variables):
+
+app.locals is global to the entire Express.js application and persists throughout the application's lifecycle.
+
+It is an object that allows you to store data that should be accessible across all request-response cycles.
+
+Data stored in app.locals is shared among all clients and all routes within your Express.js application.

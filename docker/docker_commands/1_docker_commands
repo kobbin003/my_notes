@@ -1,0 +1,80 @@
+- docker version
+- docker info
+- docker (help menu)
+
+syntax:  docker <Management-commands> <commands> (options) 
+
+⭐️ Management command: "image"
+
+-- docker images/ docker image ls (list images)
+
+-- docker imagepull <image_name> (pull an image from docker hub)
+
+⭐️ Management command: "container"
+
+-- docker ps / docker container ls (list running containers)
+	-a: to list all containers, running as well as non-running
+
+-- docker container run -p <host_port>:<container_port> <image_name> 
+	host_port : the port on your host machine, where docker is running. 
+	container_port : the port inside the docker container.
+	-p/--publish  : option to specify a port mapping. you are essentially telling Docker to forward any 
+					incoming traffic to the host port to the corresponding container port.
+					It allows you to access the services running inside the container from your host machine 
+					or from other machines on the network.
+	-d/--detach: to run the container on the background.
+				 It gives/returns a container id.
+	
+	example: docker container run -p 80:80 -n webhost -d nginx
+	
+🗒️--rm
+-- docker container run --rm <image_name>
+	this runs a container but removes/deletes the container when we stop the container 
+
+-- docker container stop <container_id> (stop a container)
+
+-- docker container logs <container_name / container_id> (logs the container details)
+
+-- docker container rm <container_ids..with_space> (remove the container/s)
+
+🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ what is going on in container ? 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️
+
+-- docker top <container_name> (lists all the process running inside the container)
+
+-- docker container inspect <container_name> (details of a container config)
+
+-- docker container stats ( performance stats for all containers )
+
+
+🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️  How to get inside conainer 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️
+
+-- docker container run -it --name <container_name> <program_name> (start new container interactively)
+	e.g: docker container run -it --name server nginx bash
+	* exit from bash stops the container.
+	
+-- docker container exec -it <container_name> <program_name> (run additional command/process in already running container)
+	e.g: docker container exec -it <container_name/id> bash
+	* exit from bash does not stops the container.
+
+🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️  docker_network 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️
+
+-- docker network ls (list all networks)
+-- docker network inspect <network_name> (inspect a network)
+-- docker network create --driver (create a virtual network using a driver)
+-- docker network connect (attach a network to a container)
+-- docker network disconnect (attach a network to a container)
+
+⭐️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 🪧️ 
+
+docker image prune: remove "dangling" images.
+
+docker system prune: removes - all stopped containers
+			 				 - all networks not used by at least one container
+			  				 - all dangling images
+			  				 - all dangling build cache
+
+docker system df: check the disk usage of images and containers
+
+
+
+

@@ -1,0 +1,24 @@
+react-chartjs:
+
+installation:
+- chart.js
+- react-chartjs-2
+
+
+step 1: register important elements from the chartjs
+		--> ChartJS.register()
+		
+step 2: use react-charts-2 components like Bar, Line, Pie etc. with data as an attribute
+
+data structure:
+
+data = {
+	labels: x-axis-values[],
+	datasets:[{
+		label: ,
+		data: y-axis-values[],
+		backgroundColor:[], // this will be as much as the number of items in dataset's data i.e can set color for each y-values
+		borderColor: string,
+		borderWidth: number,
+	}]
+}

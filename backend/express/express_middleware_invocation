@@ -1,0 +1,32 @@
+				
+				MIDDLEWARE INVOCATION :
+
+ 1. through binding to an app or router object
+ 2. immediate
+ 
+ Suppose I have a middleware:
+ 
+ const middleWare = (req, res, next) => {
+	/* does something with req, res*/
+	next(error);
+};
+
+This middleware can be invoked in two ways :
+
+ 1️⃣️. through binding
+ 
+ app.use(middlware)
+ 
+ ⚡️ middleware is executed anytime a request is received(since it is bound on the root)
+ 
+ 2️⃣️. immediate invocation :
+ 
+ app.get("/some_route", (req,res,next) =>{
+ 	middleware(req,res,next)
+ })
+ 
+ ⚡️ here middleware is invoked immediately.
+ ⚡️ middleware should be called with routes' callback function's req, res, next as it's args values.
+ ⚡️ for example, refer passport.authenticate()
+ 
+

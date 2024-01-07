@@ -1,0 +1,10 @@
+Passport can work in two modes: 
+ 1. session-based and 
+ 2. sessionless (token-based). 
+
+	1. If you plan to use session-based authentication, passport.initialize() is required to set up session support.
+
+	2. In token-based authentication, using passport.initialize() is typically not required. Token-based authentication, 
+		such as JSON Web Tokens (JWT), doesn't rely on sessions or maintaining user state on the server. 
+		Instead, each request from the client includes a token, and the server validates the token to authenticate 
+		the user for each request independently.

@@ -1,0 +1,52 @@
+Set PATH variable:
+
+⚡️ PATH:
+The PATH environment variable in a Unix-like operating system (including Linux) is a critical variable 
+that determines where the system looks for executable files when you enter a command in the terminal.
+
+⚡️ HOW TO SET PATH variable:
+
+Syntax: < export VARIABLE_NAME=VARIABLE_PATH >
+
+- "export": This command is used to set environment variables.
+
+- use echo to see the variable set. e.g: < echo $PATH >
+ 
+examples :- 
+- export PATH=FIRST_PATH_NAME
+- export PATH=$PATH:PATH_NAME_APPENDED
+- export MYDOC=$HOME/Documents
+
+There are many pre-defined variables like $PATH,$HOME etc..
+
+⚡️ When you use the "export" command to set an environment variable like PATH in a terminal session, 
+   it applies only to that specific session. 
+   When you close the terminal or open a new one, the changes made in the previous session are not preserved. 
+   This is because each terminal session is independent, and environment variables are specific to 
+   the session in which they are set.
+   
+⚡️ To make changes to environment variables, such as PATH, "persistent across terminal sessions", 
+	you need to define them in a configuration file like .bashrc, .bash_profile, or .profile.
+	
+	step 1: < nano $HOME/.bashrc >
+	step 2: paste the export command in it and save it.
+   
+   
+----------------------------------------------------------------------------------------------------------------------
+
+/home/kobin/.nvm/versions/node/v18.14.0/bin
+:/home/kobin/.cargo/bin
+:/home/kobin/bin
+:/usr/local/sbin
+:/usr/local/bin
+:/usr/sbin
+:/usr/bin
+:/sbin
+:/bin
+:/usr/games
+:/usr/local/games
+:/snap/bin
+:/snap/bin
+:/home/kobin/Android/Sdk/emulator
+:/home/kobin/Android/Sdk/platform-tools
+

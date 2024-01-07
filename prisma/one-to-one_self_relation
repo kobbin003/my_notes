@@ -1,0 +1,21 @@
+one-to-one self relation:
+
+e.g:-
+	model User {
+	  id       Int       @id @default(autoincrement())
+	  followers  User[]  @relation("followerRelation")
+	  follower   User?   @relation("followerRelation", fields: [followerId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+	  followerId String? @unique
+	}
+	
+	@relation("followerRelation", fields: [followerId], references: [id],....)
+	: this attribute establishes the relation, specifying that the parentId field in this model 
+	refers to the id field of the same model.
+	
+	parentId
+	: holds the id of self/Chapter's id
+	
+	children Chapter[] @relation("therelation")
+	: represents the "opposite" relation of the relation "followerRelation". 
+	
+✴️ when you query user's followers using the followers field, it fetches all users who are following the current user. 

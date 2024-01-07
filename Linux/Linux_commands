@@ -273,10 +273,17 @@ options:
 since uniq only checks for unique lines that occur "immediately after each other" i.e adjacently.
 Therefore 💬️ sort before uniq -u 💬️ to find all the lines that are unique.
 
-				▶️ *******	6. > vs >> *******
+				▶️ *******	6. >(The redirection operator) vs >> (The append redirection operator) *******
 command >/>> file.
-> writes the command output in the files. It results in replacing the previous content of the file.
->> concatenates the command output with the previous content of the file. It does not result in the replacement of previous content. 
+> : writes the command output in the files. It results in replacing the previous content of the file.
+syntax: command > filePath --> here, the output of the 'command' will be directed into the file at 'filePath'
+⭐️ Both creates or overwrites the file, if it already exists.
+
+>> : concatenates the command output with the previous content of the file. 
+It does not result in the replacement of previous content. 
+syntax: command > filePath --> here, the output of the 'command' will be appended with the content of file at 'filePath'.
+⭐️ creates or appends the file, if it already exists.
+
 
 				▶️ *******	7. How to use "|" inside -exec in find command: *******
 				

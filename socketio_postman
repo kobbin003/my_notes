@@ -1,0 +1,22 @@
+socketio with postman:
+
+1. click "new" button(can be found on My Workspace header)
+2. select socketio.
+3. input the url where the socketio server is listening
+	[ provided that you have already done the server side code ]
+4. click connect button to "connect" to the server.
+
+5. listen to the event:
+	5.1 go to the "Events" tab
+	5.2 write the event name that you want to listen to.
+	5.3 enable the "LISTEN" checkmark
+
+6. emit event messages:
+	6.1 go to "Message" tab
+	6.2 write the message
+	6.3 go to the right bottom side of the message textarea.
+		6.3.1 enter the event name
+		6.3.2 click the "send" button
+		other options:
+			1. Ack(acknowledge): checkmark it if you have a cb function in listener
+			2. +Arg: here you can add more than one argument to send

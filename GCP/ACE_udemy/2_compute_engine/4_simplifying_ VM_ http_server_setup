@@ -1,0 +1,46 @@
+# simplifying VM http server setup:
+
+**options:**  
+- startup script
+- instance template
+- custom image
+
+## 1. Startup script:
+
+**Bootstraping**: the process of installing os patches or software when VM instance is launched.
+
+-- you can configure **startup script** in VM to bootstrap.  
+ GOTO: create instance > advanced options >Management > Automation. write the script in that section.
+ 
+ e.g for starting an apache server along with a VM instance:
+ #!/bin/bash  
+ apt update  
+ apt -y install apache2  
+ echo "Hello World! - $(hostname): $(hostname -i)"  
+ 
+ ## 2. Instance Templates
+It is very inconvenient to specify/choose VM instance details, every time you launch an instance.  
+ You can simply create an template of Am instance which is called **instance template**.  
+ Instance templates cannot be updated. But you can create a copy of one and then modify it.
+ 
+ No cost is incurred in creating instance template. But the charge will be apllied if that template is used to run a VM instance.
+ 
+ ### Compute Engine > Virtual Machines > Instance templates
+ 
+ ## 3. Custom Image
+ Installing os and software at launch of VM instances increases boot up time.  
+ **custom image** has os patches and softwares pre-installed. Hence it helps in reducing the launch time.  
+ 
+ -- custom images can be created from -  
+ 1. an instance
+ 2. a persistent disk
+ 3. a snapshot
+ 4. another file
+ 5. a file in cloud storage  
+
+-- can be shared across projects.  
+
+### steps involved:
+### 1. creating image: Compute Engine > Storage > Disks
+
+### 2. selecting image: boot disk(while creating VM instance or template) > CUSTOM IMAGES > select Image.

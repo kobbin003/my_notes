@@ -1,0 +1,17 @@
+forwardRef in typescript
+
+Syntax:
+
+👉️ const CompName = forwardRef<RefType, PropType>((props,ref)=>{return < ref={ref}></>})
+   export default CompName;
+ 
+ 	OR
+ 
+👉️ const CompName: ForwardRefRenderFunction<RefType, PropType> = (props,ref)=>{return < ref={ref}></>}
+   export default forwardRef(CompName);
+ 
+ e.g: !Unsplash > ImageDetailModal.tsx
+ 
+ --------------------------------------- GENERICS: ----------------------------------------
+ follow this:-
+ 🔗️ https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forward_and_create_ref/#option-2---redeclare-forwardref

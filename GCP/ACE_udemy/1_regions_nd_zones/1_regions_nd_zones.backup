@@ -1,0 +1,25 @@
+# Regions_nd_zones:
+
+### issues related to data centres:
+- high latency(**zone** problem), for users in other part of the world.
+- low availability(data centre crashes)
+
+### advantages of regions provision:
+- high availability.
+- low latency.
+- global footprint.
+- adhere to global regulation.
+
+### a region is comprised of multiple zones. Its benefits are:
+- increased availability within a region
+- increased fault tolerance
+
+### A zone is comprised of one or more clusters.
+- a cluster is nothing but a distinct physical infrastructure that is housed in a data centre.
+
+Zones in a region are connected through low latency links
+
+### example:
+| RegionCode | region | Zones | Zones List |
+| - | -- |-|-|
+| code |place,country | number|all the zones |

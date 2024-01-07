@@ -1,0 +1,67 @@
+Building images:
+
+The 5 Usual Suspects:-
+
+ 1️⃣️ - FROM
+Usage: FROM image:tag
+
+Description: Specifies the base image to use for the subsequent instructions in the Dockerfile. 
+			It defines the starting point for the new image you're creating. 
+			Images can be official ones from Docker Hub or custom ones you've created
+
+e.g: FROM ubuntu:20.04
+
+ 2️⃣️- ENV
+Usage: ENV key value
+
+Description: Sets environment variables in the image. 
+			These variables are accessible during the image build process and also when a container is 
+			run from the built image. It's useful for configuration purposes.
+
+e.g: ENV MYSQL_USER=admin
+	 ENV MYSQL_PASSWORD=secretpassword
+		
+ 3️⃣️- RUN
+Usage: RUN command
+
+Description: Executes a command in the shell within the new image. 
+			The command can be any valid shell command, and it's executed during the image build. 
+			It's commonly used for installing packages, updating repositories, or setting up configurations.
+
+e.g: RUN apt-get update && apt-get install -y nginx
+	
+ 4️⃣️- EXPOSE
+Usage: EXPOSE port
+
+Description: Informs Docker that the container will listen on the specified network ports at runtime. 
+			It does not actually publish the port; it's more of a documentation feature. 
+			It's commonly used when you need to map ports from the container to the host at runtime using the -p flag.
+
+e.g: EXPOSE 80
+
+ 5️⃣️- CMD
+Usage: CMD ["executable","param1","param2"] (exec form) or CMD command param1 param2 (shell form)
+
+Description: Specifies the default command and/or parameters to run when a container is launched from the built image. 
+			If a Docker container is run without specifying a command, this command will be executed. 
+			There can be only one CMD instruction in a Dockerfile. If you have multiple CMD instructions, 
+			only the last one will take effect.
+			
+e.g: CMD nginx -g "daemon off;" 
+	OR 
+	CMD ["nginx", "-g", "daemon off;"]
+
+								⭐️ ⭐️ ⭐️ ⭐️ ⭐️ OTHERS: ⭐️ ⭐️ ⭐️ ⭐️ ⭐️
+
+ 6️⃣️- WORKDIR
+usage: WORKDIR path
+desc: selects the path to be the working directory. All following instructions will be executed in 
+	this directory context.
+								
+ 7️⃣️- COPY
+usage: COPY [host source] [container destination]
+desc: it copies the item in host source to container destination
+		e.g copy . .  --> copys every item host current directory to container's 
+						current/working directory(which is selected through WORKDIR command).
+		
+	

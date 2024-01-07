@@ -1,0 +1,24 @@
+
+🛑️ ERROR:
+" Invariant Violation: Calling synchronous methods on native modules is not supported in Chrome "
+
+✅️ SOLUTION :
+
+🔗️ https://stackoverflow.com/questions/61067004/invariant-violation-calling-synchronous-methods-on-native-modules-is-not-suppor
+
+👉️ modify the code here: node_modules/react-native/Libraries/BatchedBridge/MessageQueue.js
+
+🧑‍💻️	callNativeSyncHook(
+		moduleID: number,
+		methodID: number,
+		params: any[],
+		onFail: ?Function,
+		onSucc: ?Function,
+	  ): any {
+		const isDebuggingEnabled = (typeof atob !== 'undefined');
+		this.processCallbacks(moduleID, methodID, params, onFail, onSucc);
+		if(!isDebuggingEnabled)
+		{
+		  return global.nativeCallSyncHook(moduleID, methodID, params);
+		}
+	  }

@@ -1,0 +1,20 @@
+$in and $all:
+
+⚡️these both are applied on an array;
+
+
+example: pingpong app(getUserChats controller)
+
+$in :-
+const chat = await ChatModel.find({ relation: { $in: chatIds } });
+here, we will get all chat's whose relation field's value contains any of the value inside chatIds(which is an array)
+
+$all :-
+const chat = await ChatModel.find({ relation: { $all: chatIds } });
+here, we will get all chat's whose relation field's value contains all of the value inside chatIds(which is an array)
+
+⭐️ This makes more sense if relation = an array;
+
+ But for single value, which in my case of pinpong app is ObjectId, it only makes sense to use "$in".
+
+⭐️ This is allmost like chatIds.map(id=>find({relation==id}))

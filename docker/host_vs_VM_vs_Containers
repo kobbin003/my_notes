@@ -1,0 +1,15 @@
+HOST vs VM vs CONATAINERS:
+
+Host System: 
+The host operating system runs its own kernel, which manages hardware resources and provides services 
+to applications and processes running on the host.
+
+Virtual Machines (VMs): 
+Each VM runs its own guest operating system and, consequently, its own kernel. 
+These kernels operate independently of the host system's kernel. 
+Virtualization technology allows multiple kernels to run on the same physical hardware.
+
+Containers: 
+Containers share the host system's kernel. 
+They do not require a separate guest OS or kernel because they leverage the host system's kernel. 
+This makes containers lightweight and allows them to start up quickly.

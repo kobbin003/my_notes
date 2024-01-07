@@ -1,0 +1,28 @@
+Subscription in firestore:
+
+⭐️ use onSnapShot method.
+
+👉️ syntax: onSnapShot(query,(querySnapShot)=>{
+ 	//
+ })
+
+👉️ e.g:
+const userExpenseCollectionRef = collection(
+				db,
+				"users",
+				userDocId,
+				"expenses"
+		);
+
+const q = query(userExpenseCollectionRef);
+
+const unsubscribe = onSnapshot(q, (querySnapShot) => {
+		const expenses = querySnapShot.docs.map((doc) => ({
+			id: doc.id,
+			data: doc.data(),
+		}));
+
+		console.log('expenses',expenses)
+	});
+	
+unsubscribe() // for unsubscribing

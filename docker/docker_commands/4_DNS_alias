@@ -1,0 +1,30 @@
+Multiple containers with the same DNS(alias):
+Used in LOAD BALANCING
+[multiple server instances with DNA aliases that responds to the same DNS]
+
+⭐️ KEYWORD: --network-alias
+
+< docker container run -d --network ${network name} --network-alias ${network alias name} ${image} >
+
+	e.g:  docker container run -d --network my_net --network-alias search elasticsearch:2 
+	- This runs a container with network alias as "search"
+
+	- We can create multiple containers with the same network alias i.e "search".
+
+	- Docker round robins the request sent to the network-alias.
+
+⭐️ Example: 
+	I have two server container running, say server1 and server2
+
+	I have attached network alias named "search" to both of these containers network.
+
+	If I run a new container and run < ping search > :- the reponse will be from server1
+
+	and if I stop the above ping and run < ping search > again, the response will be from server2
+
+⭐️ How to check all the ipaddress mapped with the network-alias:
+	
+	nslookup: < nslookup ${network_alias} >
+	- The nslookup command is used to query domain name servers to obtain domain name or IP address mapping or other 
+	  DNS records. 
+	  

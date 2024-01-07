@@ -1,0 +1,13 @@
+FileReader:
+
+FileReader is a built-in JavaScript object that provides a way to read the contents of files asynchronously. 
+It's commonly used when you need to interact with files selected by users through HTML file input fields or 
+when working with files in web applications. 
+FileReader is especially useful for reading text and binary data from files.
+
+
+👉️ Main methods:
+	- readAsArrayBuffer(blob) – read the data in binary format ArrayBuffer.
+	- readAsText(blob, [encoding]) – read the data as a text string with the given encoding (utf-8 by default).
+	- readAsDataURL(blob) – read the binary data and encode it as base64 data url.
+	- abort() – cancel the operation.

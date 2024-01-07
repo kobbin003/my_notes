@@ -1,0 +1,19 @@
+npm i passport-google-oauth2
+
+⭐️  no need for expiry time,
+	passport has isAuthenticated method() to check if the user is authenticated.
+	
+⭐️  in the Google OAuth 2.0 authentication flow, there is typically no need for a direct exchange of tokens 
+	between the frontend and backend of your application. Google OAuth handles the token exchange as part of 
+	the authentication process, and Passport.js (or your chosen authentication library) takes care of managing 
+	these tokens behind the scenes.
+	
+	this is how th auth middleware, in case of passportjs looks like:-
+	
+	🧑‍💻️ 🧑‍💻️ 🧑‍💻️
+	export function ensureAuthenticated(req, res, next) {
+	if (req.isAuthenticated()) {
+		return next(); // User is authenticated, continue to the next middleware
+	}
+		res.redirect("/login"); // User is not authenticated, redirect to the login page
+	}

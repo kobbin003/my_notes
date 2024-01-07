@@ -1,0 +1,11 @@
+specificity:
+
+highest to least
+!important
+inline styles
+id selctor (#id)
+pseudo-class selector (:hover)
+attribute selector (input[type="text"])
+class (.class)
+tag (p,div etc.)
+universal (*)

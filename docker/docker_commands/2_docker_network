@@ -1,0 +1,63 @@
+												
+												docker network:
+
+⭐️ virtual network:
+- when we create a container, the container gets connected to a default private virtual network(docker0) 
+  a.k.a "bridge network".
+
+- It is through this that the container is connected to the internet.
+	- this is how network packet moves: 
+	  container <---> virtual network <---> internet
+
+- Each virtual network routes through the NAT firewall on host IP.
+
+- there can be more than one container connected to a virtual network.
+
+- containers on the same network can talk with each other without opening their ports up.
+
+- containers on different Docker networks generally can communicate directly with each other 
+  but some additional configuration is required.
+
+- we can create more than one virtual networks; other than the default virtual network.
+
+- a host_port can bind to only one container at a time.
+	e.g :   docker container run --name webserver1 -d -p 8080:80 nginx
+			docker container run --name webserver2 -d -p 8080:80 nginx
+			Here, there will be error because the port 8080 was already allocated to webserver1.
+			
+	correction: docker run --name webserver2 -d -p 8081:80 nginx
+				- binded to a new host_port i.e 8081
+			
+-	The containers' internal ports can be the same because they are isolated within the virtual network, 
+	but their external (host) ports must be different to avoid conflicts.
+
+⭐️ commands:
+
+- docker container port <container_name> 
+	: shows the port where the container is running
+	
+- docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost
+	: shows the ipaddress of the container's virtual network
+
+- docker network ls
+	: list all available networks.
+
+- docker network inspect <network_name>
+	: 
+
+- docker < run_command > --network <network_name> 
+	: runs with network <network_name>
+	e.g: docker container run --name myServer -d -p 80:80 --network <network_name> nginx:alpine 
+
+- docker network create <network_name>
+	: creates a custom network
+
+- docker network connect
+	: connects a container to a network
+	[ dynamically creates a NIC in a container on an existing virtual network ]
+	
+- docker network disconnect
+	: removes a container from a network 
+	[ it dynamically removes NIC from a container from a specifidc virtual network ]
+
+

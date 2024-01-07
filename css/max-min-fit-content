@@ -1,0 +1,3 @@
+min-content vs max-content vs fit-content:
+
+max-content represents the size a box needs to contain all of its content without being wrapped or it overflows the box.

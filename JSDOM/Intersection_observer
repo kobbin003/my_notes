@@ -1,0 +1,11 @@
+Intersection Observer:
+
+Properties of IntersetionObserverEntry:
+- boundingClientRect:DOMRectReadOnly -> the whole of the target element.
+- intersectionRatio -> intersection-area/boundingClient-area.
+- inersectionRect:DOMRectReadOnly -> only the visible part of the target element.
+- isIntersecting -> true,when the intersection happens; false, if scrolled back(container/viewport) to top again
+- isVisible -> ??????
+- rootBounds:DOMRectReadOnly -> by default: viewport; OR you can set it in option
+- target -> on whoom the insersection is observed.
+- time -> A DOMHighResTimeStamp indicating the time at which the intersection was calculated.

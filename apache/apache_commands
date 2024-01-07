@@ -1,0 +1,6 @@
+# apache commands:
+
+`sudo su` before to act as the root user.
+- install - `apt install apache2`
+- start - `system apache2 start`
+- stop - `system apache2 stop`

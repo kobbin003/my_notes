@@ -1,0 +1,15 @@
+
+IMAGES:
+- Images contains only:
+	- app binaries and dependencies
+	- metadata about the image data and how to run the image.
+
+	
+- containers are not a complete machine.
+It just contains the binaries
+Kernels are provided by the host machine.
+
+
+
+
+

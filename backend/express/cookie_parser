@@ -1,0 +1,5 @@
+var cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
+cookie-parser parses the Cookie header in incoming HTTP requests and makes the cookie data 
+accessible in the req.cookies object.

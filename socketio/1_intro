@@ -1,0 +1,30 @@
+									socket.io
+
+steps:
+
+server-side-
+
+Installations:
+- npm install socket.io
+- npm install bufferutil utf-8-validate
+
+1. create an instance of socketio server attached to the http server:
+	io = new Server(httpServer, {//options})
+
+2. listen for any connection
+	io.on("connection", (socket) => {
+		console.log('socket connected') // this logs when it gets connected to the client side.
+	})
+
+client-side:
+
+Installations:
+- npm i socket.io-client
+
+1. launch the io instance:
+	const socket: Socket = io(URL, { autoConnect: false });
+	// if no option i.e { autoConnect: false }, then the socket gets automatically 
+	// connected to the socket server in the given "URL"
+
+2. listen for connections, events etc:
+	socket.on("connect", ()=>{ }); // this logs when it gets connected to the server side.

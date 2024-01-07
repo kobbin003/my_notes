@@ -1,0 +1,8 @@
+docker_push:
+
+command: docker push ${username/image_name}
+
+		requirements:
+		* image_name should have your ${username/} prefix orelse it would be denied
+		* you have to be logged in through CLI.
+		

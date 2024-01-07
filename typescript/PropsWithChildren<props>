@@ -1,0 +1,29 @@
+PropsWithChildren<props>:
+
+export const ParentComponent = () => {
+	return <ChildComponent fooBar="click">i am the child</ChildComponent>;
+};
+
+❌️ Instead of this:
+interface ChildComponentProps {
+	fooBar?: string; // my custom prop
+	children: ReactNode;
+}
+const ChildComponent: FC<ChildComponentProps> = (props) => (
+	<button type="button">
+		{props.children}
+		{props.fooBar}
+	</button>
+);
+
+
+✅️ Do this:
+interface ChildComponentProps {
+	fooBar?: string; // my custom prop
+}
+const ChildComponent: FC<PropsWithChildren<ChildComponentProps>> = (props) => (
+	<button type="button">
+		{props.children}
+		{props.fooBar}
+	</button>
+);

@@ -1,0 +1,27 @@
+Setting up trpc with nextjs 13
+
+steps: 
+1. server side
+2. client side
+
+1. server side is almost same as normal ones.
+
+2. client side:
+
+	2.1 create api aroute:
+		 - create api/trpc/[trpc]/route.ts: to handle the fetch requests
+		
+	2.2 create Provider:
+		 - create _trpc/client.ts: to create "trpc" for the client, which will be used to create client
+		
+		 - create _trpc/Provider.tsx: to create a trcp provider which provides: a> queryClient and b> trpcClient
+		
+		* any dir starting with _ is ignored by app router in terms of routing
+		
+	2.3 wrap your app inside the Provider.
+
+	2.4 Usage: 
+		const { data ,...rest } = trpc.${method_name}.useQuery();
+		* rest is the same as the return data of useQuery.
+
+		e.g: const { data } = trpc.getHello.useQuery();

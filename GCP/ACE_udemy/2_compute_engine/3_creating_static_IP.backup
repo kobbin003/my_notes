@@ -1,0 +1,16 @@
+# creating static IP:
+ ## How to create a static IP for your VM instance:
+### 1. quick and dirty way:
+
+1. got to **VPC network** service in dashboard.
+2. select **IP addresses**.
+3. select **EXTERNAL IP ADDRESSES** tab
+4. click **RESERVE EXTERNAL STATIC IP ADDRESSES**  
+	* *the region of static IP should be the same as the VM's region*  
+
+5. assign the static IP to your selected VM instance.(through the console)
+
+
+-- static IP can be transfered from one VM instance to another VM instance.  
+-- you are billed for static IP even if you are not using it.  
+-- release the static IP, if you are not using it.

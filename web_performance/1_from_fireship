@@ -1,0 +1,39 @@
+
+🛠️ Tools:
+1. web vitals: chrome extension
+2. unlighthouse: 
+
+
+⭐️ Important metrics:
+	👉️ LCP: Largest Contentful Paint: 0 / 2.5s / 4.0s (good / needs improvement / poor)
+			[ Loading ]
+	👉️ FID: First Input Delay: 0 / 100ms / 300ms
+			[ interactivity ]
+	👉️ CLS: Cumulative Layout Shift: 0 / 0.1 / 0.25
+			[ Visual Stability ]
+			
+   LCP (Largest Contentful Paint):
+
+	- LCP is a web performance metric that measures the loading speed and visual stability of a web page.
+	- It specifically focuses on the time it takes for the largest and most significant content element 
+	  (such as an image or text block) to render on the screen.
+	- LCP helps assess the user's perception of a page's loading speed, with a good LCP indicating 
+	  that the main content becomes visible quickly.
+
+   FID (First Input Delay):
+
+	- FID is another web performance metric that measures the responsiveness of a web page or web application.
+	- It quantifies the delay between the first user interaction (e.g., a click or tap) and the time when the browser 
+	  responds to that interaction by initiating a specific action, such as scrolling or loading a new page.
+	- FID is important because it directly relates to the user's experience and how quickly they can interact with a 
+	  webpage.
+
+   CLS (Cumulative Layout Shift):
+
+	- CLS is a web performance metric that assesses the visual stability of a web page during loading.
+	  It measures how much the layout of a page shifts or changes as content loads, which can be frustrating for users 
+	- if elements jump around or cause them to click on unintended items.
+	- A low CLS score means that the page's content is stable and doesn't shift unexpectedly.
+
+
+

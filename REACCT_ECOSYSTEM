@@ -7,7 +7,7 @@
 	▶️- React router
 	▶️- tanstack router ---> ⛔️ dont have much features as react router.
 	▶️- Nextjs -> ✅️ not required as it has built in routing.
-	
+
 👉️ Client State Management:
 	▶️- redux-toolkit
 	▶️- zustand
@@ -35,11 +35,13 @@
 	▶️ mantineUI
 	▶️ chakra-ui
 	▶️ antdesign
-	▶️ tailwindcss frameworks: headlessUI, daisyUI, shadcn
+	▶️ tailwindcss frameworks: headlessUI, ⚡️daisyUI, shadcn
 	
 👉️ Animation:
 	▶️ react spring
 	▶️ framer motion
+	
+	▶️ GreenSock Animation Platform (GSAP):
 	
 👉️ Data Vizualization:
 	▶️ victorychart
@@ -77,5 +79,9 @@
 	▶️ dndkit ---> for drag and drop functionality.
 	▶️ react dropzone ---> for file uploads.
 	▶️ firebase ---> for authenication.
-	▶️ supabas ---> for authentication.
+	▶️ supabase ---> for authentication.
+
+
+
+
 

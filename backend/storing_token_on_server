@@ -1,0 +1,13 @@
+storing accesstoken on sever side:
+
+Store the token in the server's session or database associated with the user's session or account. 
+When the user is redirected to the destination, 
+the server can retrieve the token and use it for authentication or authorization.
+
+Example (Server-Side Storage and Redirect):
+// Store the token in the server-side session or database
+req.session.accessToken = accessToken;
+
+// Server-side redirect to the welcome page
+res.redirect("/welcome");
+

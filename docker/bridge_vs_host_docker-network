@@ -1,0 +1,47 @@
+bridge vs host in docker network:
+
+In Docker networking, "bridge" and "host" are two different network modes that containers 
+can use to communicate with the host system and other containers. 
+
+Here's what each mode means:
+
+### Bridge Network Mode:
+
+- **Bridge Mode (Default):** When you create a Docker container without specifying a network mode, 
+							 it is connected to the bridge network by default.
+  
+  - **Isolation:** Containers on the bridge network can communicate with each other using their container names. 
+  					However, they are isolated from the host system's network interfaces, which provides a level 
+  					of security.
+  
+  - **Port Mapping:** You can expose container ports to the host system using port mapping (e.g., `-p 8080:80`). 
+  						This allows you to access services inside the container from your host machine.
+  
+  - **Internet Access:** Containers on the bridge network can access the internet if the host system has internet access.
+
+### Host Network Mode:
+
+- **Host Mode:** When you run a container with the `--network host` option, the container shares the network 
+				namespace with the host system.
+  
+  - **No Isolation:** Containers in host mode share the network namespace with the host, meaning they use the host's 
+  						network interfaces directly. This provides very low overhead networking, as there is no 
+  						additional network virtualization.
+  
+  - **Port Mapping:** Port mapping is not required in host mode. If a service inside the container listens on a port, 
+  						it is directly accessible on the host system at the same port number.
+  
+  - **Performance:** Host mode can offer better networking performance because there is no overhead from network 
+  						address translation (NAT) or bridging.
+
+### When to Use Each Mode:
+
+- **Bridge Mode:** Use bridge mode when you want containers to be isolated from the host system and other containers, 
+					and you want to manage port mappings between the host and containers. This mode provides a good 
+					balance between security and functionality.
+
+- **Host Mode:** Use host mode when you want containers to have direct access to the host system's network interfaces, 
+					and you don't need network isolation between the host and containers. This mode provides the best 
+					networking performance but reduces network isolation.
+					
+					

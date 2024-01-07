@@ -1,0 +1,7 @@
+login from cli:
+
+< docker login > : logins user, usename and password will be asked.
+
+< cat .docker/config.json >
+
+< docker logout >: remember to use this when using on other computers.

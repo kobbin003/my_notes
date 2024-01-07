@@ -1,0 +1,23 @@
+DNS:
+
+DNS is important in docker because we cannot rely on IP addresses inside containers since things are so dynamic.
+IPaddress are assigned to containers based on the order in which the containers are started, which may change.
+
+Solution is "DNS naming"
+
+Docker DNS:
+Docker daemon has a built in DNS server that containers use by default.
+
+Docker takes "container names"  as the equivalent of a "host name" for containers talking to each other.
+
+	🗒️🗯️🛑️ using IP for talking to containers is anti-pattern. Avoid doing it.
+
+⭐️ Features of custom/user-defined network:
+ 
+- Automatic DNS resolution for all containers on that virtual network.
+ which means that you can communicate with containers using their "container name" instead of their "IP Address".
+ 
+ e.g: docker container exec -it <server-1-container> ping <server-2-container>
+ 		[It will work "provided" that both the server containers are in custom-network ]
+
+ ‼️"bridge network" does not have automatic DNS resolution feature.
